@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2004 model module.
    * @module model/InlineResponse2004
-   * @version 0.2.0
+   * @version 0.2.1
    */
 
   /**
@@ -44,6 +44,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
 
@@ -62,6 +63,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }

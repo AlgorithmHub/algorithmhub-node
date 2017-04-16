@@ -34,7 +34,7 @@
   /**
    * The Body4 model module.
    * @module model/Body4
-   * @version 0.2.0
+   * @version 0.2.1
    */
 
   /**
@@ -44,6 +44,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
   };
 
@@ -57,6 +58,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+
       if (data.hasOwnProperty('wstype')) {
         obj['wstype'] = ApiClient.convertToType(data['wstype'], 'String');
       }

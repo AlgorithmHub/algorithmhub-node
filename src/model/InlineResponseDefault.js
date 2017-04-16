@@ -34,7 +34,7 @@
   /**
    * The InlineResponseDefault model module.
    * @module model/InlineResponseDefault
-   * @version 0.2.0
+   * @version 0.2.1
    */
 
   /**
@@ -45,6 +45,7 @@
    */
   var exports = function(message) {
     var _this = this;
+
     _this['message'] = message;
   };
 
@@ -58,6 +59,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+
       if (data.hasOwnProperty('message')) {
         obj['message'] = ApiClient.convertToType(data['message'], 'String');
       }

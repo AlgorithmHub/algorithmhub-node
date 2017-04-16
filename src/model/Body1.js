@@ -34,7 +34,7 @@
   /**
    * The Body1 model module.
    * @module model/Body1
-   * @version 0.2.0
+   * @version 0.2.1
    */
 
   /**
@@ -48,6 +48,7 @@
    */
   var exports = function(wsid, inputs, f, outputs) {
     var _this = this;
+
     _this['wsid'] = wsid;
     _this['inputs'] = inputs;
     _this['f'] = f;
@@ -65,6 +66,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+
       if (data.hasOwnProperty('wsid')) {
         obj['wsid'] = ApiClient.convertToType(data['wsid'], 'String');
       }

@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2007 model module.
    * @module model/InlineResponse2007
-   * @version 0.2.0
+   * @version 0.2.1
    */
 
   /**
@@ -45,6 +45,7 @@
    */
   var exports = function(files) {
     var _this = this;
+
 
     _this['files'] = files;
   };
@@ -59,6 +60,7 @@
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
+
       if (data.hasOwnProperty('path')) {
         obj['path'] = ApiClient.convertToType(data['path'], 'String');
       }
