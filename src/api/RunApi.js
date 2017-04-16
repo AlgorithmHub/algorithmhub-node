@@ -31,7 +31,7 @@
   /**
    * Run service.
    * @module api/RunApi
-   * @version 0.3.0
+   * @version 0.2.0
    */
 
   /**

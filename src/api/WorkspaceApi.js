@@ -31,7 +31,7 @@
   /**
    * Workspace service.
    * @module api/WorkspaceApi
-   * @version 0.3.0
+   * @version 0.2.0
    */
 
   /**
@@ -54,7 +54,7 @@
      */
 
     /**
-     * Clone workspace
+     * Clone the workspace
      * Clone the given workspace
      * @param {String} wsid The workspace base type.
      * @param {module:api/WorkspaceApi~cloneWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response

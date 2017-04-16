@@ -4,7 +4,7 @@ All URIs are relative to *http://localhost:10010/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cloneWorkspace**](WorkspaceApi.md#cloneWorkspace) | **POST** /workspace/{wsid}/clone | Clone workspace
+[**cloneWorkspace**](WorkspaceApi.md#cloneWorkspace) | **POST** /workspace/{wsid}/clone | Clone the workspace
 [**createWorkspace**](WorkspaceApi.md#createWorkspace) | **POST** /workspace | Creates new workspace
 [**deleteWorkspace**](WorkspaceApi.md#deleteWorkspace) | **DELETE** /workspace/{wsid} | Delete an existing workspace
 [**detailWorkspace**](WorkspaceApi.md#detailWorkspace) | **GET** /workspace/{wsid} | Gets workspace metadata
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 # **cloneWorkspace**
 > &#39;String&#39; cloneWorkspace(wsid)
 
-Clone workspace
+Clone the workspace
 
 Clone the given workspace
 
