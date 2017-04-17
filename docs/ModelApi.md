@@ -34,15 +34,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var body = new algorithmhub.Body(); // Body | The model configuration
 
+apiInstance.createModel(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createModel(body, callback);
 ```
 
 ### Parameters
@@ -80,15 +77,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var body = new algorithmhub.Body2(); // Body2 | The model configuration
 
+apiInstance.createModel_0(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createModel_0(body, callback);
 ```
 
 ### Parameters
@@ -126,15 +120,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var sid = "sid_example"; // String | Deletes the model based on the model id provided
 
+apiInstance.deleteModel(sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteModel(sid, callback);
 ```
 
 ### Parameters
@@ -172,15 +163,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var sid = "sid_example"; // String | Deletes the model based on the model id provided
 
+apiInstance.deleteModel_0(sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteModel_0(sid, callback);
 ```
 
 ### Parameters
@@ -218,15 +206,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var sid = "sid_example"; // String | The model id
 
+apiInstance.detailModel(sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.detailModel(sid, callback);
 ```
 
 ### Parameters
@@ -264,15 +249,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var sid = "sid_example"; // String | The model id
 
+apiInstance.detailModel_0(sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.detailModel_0(sid, callback);
 ```
 
 ### Parameters
@@ -312,15 +294,12 @@ var sid = "sid_example"; // String | The model id that needs to be edited
 
 var body = new algorithmhub.Body1(); // Body1 | The model configuration
 
+apiInstance.editModel(sid, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.editModel(sid, body, callback);
 ```
 
 ### Parameters
@@ -361,15 +340,12 @@ var sid = "sid_example"; // String | The model id that needs to be edited
 
 var body = new algorithmhub.Body3(); // Body3 | The model configuration
 
+apiInstance.editModel_0(sid, body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.editModel_0(sid, body, callback);
 ```
 
 ### Parameters
@@ -405,15 +381,12 @@ Return list of models owned by user
 var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.ModelApi();
+apiInstance.listModels().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listModels(callback);
 ```
 
 ### Parameters
@@ -445,15 +418,12 @@ Return list of models owned by user
 var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.ModelApi();
+apiInstance.listModels_0().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listModels_0(callback);
 ```
 
 ### Parameters
@@ -488,15 +458,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var sid = "sid_example"; // String | The model id to run
 
+apiInstance.runModel(sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.runModel(sid, callback);
 ```
 
 ### Parameters
@@ -534,15 +501,12 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var sid = "sid_example"; // String | The model id to run
 
+apiInstance.runModel_0(sid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.runModel_0(sid, callback);
 ```
 
 ### Parameters

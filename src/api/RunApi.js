@@ -31,7 +31,7 @@
   /**
    * Run service.
    * @module api/RunApi
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**
@@ -45,22 +45,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the addFileRun operation.
-     * @callback module:api/RunApi~addFileRunCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * PRIVATE
      * Add a file to the run results
      * @param {String} rid The run id
-     * @param {module:api/RunApi~addFileRunCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.addFileRun = function(rid, callback) {
+    this.addFileRunWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -87,26 +79,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/file', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the detailRun operation.
-     * @callback module:api/RunApi~detailRunCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2002} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * PRIVATE
+     * Add a file to the run results
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.addFileRun = function(rid) {
+      return this.addFileRunWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get info about run
      * Get info about the run
      * @param {String} rid The run id
-     * @param {module:api/RunApi~detailRunCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
-    this.detailRun = function(rid, callback) {
+    this.detailRunWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -133,26 +130,31 @@
       return this.apiClient.callApi(
         '/run/{rid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getInput operation.
-     * @callback module:api/RunApi~getInputCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get info about run
+     * Get info about the run
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
+    this.detailRun = function(rid) {
+      return this.detailRunWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Input parameters
      * Input parameters
      * @param {String} rid The run id
-     * @param {module:api/RunApi~getInputCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.getInput = function(rid, callback) {
+    this.getInputWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -179,26 +181,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/input', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getOutput operation.
-     * @callback module:api/RunApi~getOutputCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Input parameters
+     * Input parameters
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    this.getInput = function(rid) {
+      return this.getInputWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get the output
      * Get the output
      * @param {String} rid The run id
-     * @param {module:api/RunApi~getOutputCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.getOutput = function(rid, callback) {
+    this.getOutputWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -225,27 +232,32 @@
       return this.apiClient.callApi(
         '/run/{rid}/output', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getOutputFigure operation.
-     * @callback module:api/RunApi~getOutputFigureCallback
-     * @param {String} error Error message, if any.
-     * @param {File} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get the output
+     * Get the output
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
+    this.getOutput = function(rid) {
+      return this.getOutputWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get figure as app
      * Get figure as app
      * @param {String} rid The run id
      * @param {String} fid The file id
-     * @param {module:api/RunApi~getOutputFigureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link File}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
-    this.getOutputFigure = function(rid, fid, callback) {
+    this.getOutputFigureWithHttpInfo = function(rid, fid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -278,27 +290,33 @@
       return this.apiClient.callApi(
         '/run/{rid}/figure/{fid}/*', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getOutputFile operation.
-     * @callback module:api/RunApi~getOutputFileCallback
-     * @param {String} error Error message, if any.
-     * @param {File} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get figure as app
+     * Get figure as app
+     * @param {String} rid The run id
+     * @param {String} fid The file id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
+    this.getOutputFigure = function(rid, fid) {
+      return this.getOutputFigureWithHttpInfo(rid, fid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get a file
      * Get a file
      * @param {String} rid The run id
      * @param {String} filename The filename
-     * @param {module:api/RunApi~getOutputFileCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link File}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
-    this.getOutputFile = function(rid, filename, callback) {
+    this.getOutputFileWithHttpInfo = function(rid, filename) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -331,26 +349,32 @@
       return this.apiClient.callApi(
         '/run/{rid}/file/{filename}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getStatus operation.
-     * @callback module:api/RunApi~getStatusCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get a file
+     * Get a file
+     * @param {String} rid The run id
+     * @param {String} filename The filename
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
+    this.getOutputFile = function(rid, filename) {
+      return this.getOutputFileWithHttpInfo(rid, filename)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get status of the run
      * Get status of the run
      * @param {String} rid The run id
-     * @param {module:api/RunApi~getStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.getStatus = function(rid, callback) {
+    this.getStatusWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -377,26 +401,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/status', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listOutputFigures operation.
-     * @callback module:api/RunApi~listOutputFiguresCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get status of the run
+     * Get status of the run
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.getStatus = function(rid) {
+      return this.getStatusWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get list of figures
      * Get list of figures
      * @param {String} rid The run id
-     * @param {module:api/RunApi~listOutputFiguresCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.listOutputFigures = function(rid, callback) {
+    this.listOutputFiguresWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -423,26 +452,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/figures', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listOutputFiles operation.
-     * @callback module:api/RunApi~listOutputFilesCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get list of figures
+     * Get list of figures
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.listOutputFigures = function(rid) {
+      return this.listOutputFiguresWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get list of output files
      * Get list of output files
      * @param {String} rid The run id
-     * @param {module:api/RunApi~listOutputFilesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.listOutputFiles = function(rid, callback) {
+    this.listOutputFilesWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -469,25 +503,30 @@
       return this.apiClient.callApi(
         '/run/{rid}/files', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listRuns operation.
-     * @callback module:api/RunApi~listRunsCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<Object>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get list of output files
+     * Get list of output files
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.listOutputFiles = function(rid) {
+      return this.listOutputFilesWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get list of runs
      * Get list of runs
-     * @param {module:api/RunApi~listRunsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<Object>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Object>} and HTTP response
      */
-    this.listRuns = function(callback) {
+    this.listRunsWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -508,26 +547,30 @@
       return this.apiClient.callApi(
         '/run', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the postError operation.
-     * @callback module:api/RunApi~postErrorCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get list of runs
+     * Get list of runs
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Object>}
      */
+    this.listRuns = function() {
+      return this.listRunsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * PRIVATE
      * Post that an error occured and close the run.
      * @param {String} rid The workspace base type.
-     * @param {module:api/RunApi~postErrorCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.postError = function(rid, callback) {
+    this.postErrorWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -554,26 +597,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/error', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the postFigure operation.
-     * @callback module:api/RunApi~postFigureCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * PRIVATE
+     * Post that an error occured and close the run.
+     * @param {String} rid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.postError = function(rid) {
+      return this.postErrorWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * PRIVATE
      * Add a figure from the run
      * @param {String} rid The workspace base type.
-     * @param {module:api/RunApi~postFigureCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.postFigure = function(rid, callback) {
+    this.postFigureWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -600,26 +648,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/figure', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the postStatus operation.
-     * @callback module:api/RunApi~postStatusCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * PRIVATE
+     * Add a figure from the run
+     * @param {String} rid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.postFigure = function(rid) {
+      return this.postFigureWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * PRIVATE
      * Post the status of run
      * @param {String} rid The run id
-     * @param {module:api/RunApi~postStatusCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.postStatus = function(rid, callback) {
+    this.postStatusWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -646,25 +699,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/status', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the setSuccess operation.
-     * @callback module:api/RunApi~setSuccessCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
+     * PRIVATE
+     * Post the status of run
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.postStatus = function(rid) {
+      return this.postStatusWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * PRIVATE
      * Send output.json and close the run as successful
      * @param {String} rid The run id
-     * @param {module:api/RunApi~setSuccessCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.setSuccess = function(rid, callback) {
+    this.setSuccessWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -691,8 +750,21 @@
       return this.apiClient.callApi(
         '/run/{rid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * PRIVATE
+     * Send output.json and close the run as successful
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.setSuccess = function(rid) {
+      return this.setSuccessWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

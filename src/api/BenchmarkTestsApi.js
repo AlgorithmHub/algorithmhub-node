@@ -31,7 +31,7 @@
   /**
    * BenchmarkTests service.
    * @module api/BenchmarkTestsApi
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**
@@ -45,22 +45,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the validateBenchmark operation.
-     * @callback module:api/BenchmarkTestsApi~validateBenchmarkCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Validation using default parameters
      * Does the validation part of the model and it uses the default parameters
      * @param {String} mid The model id
-     * @param {module:api/BenchmarkTestsApi~validateBenchmarkCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
-    this.validateBenchmark = function(mid, callback) {
+    this.validateBenchmarkWithHttpInfo = function(mid) {
       var postBody = null;
 
       // verify the required parameter 'mid' is set
@@ -87,8 +79,21 @@
       return this.apiClient.callApi(
         '/run/{mid}/benchmark/results', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Validation using default parameters
+     * Does the validation part of the model and it uses the default parameters
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     */
+    this.validateBenchmark = function(mid) {
+      return this.validateBenchmarkWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

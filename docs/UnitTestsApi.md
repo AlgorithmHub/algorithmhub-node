@@ -27,15 +27,12 @@ var apiInstance = new algorithmhub.UnitTestsApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.runKeyboardInterrupt(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.runKeyboardInterrupt(rid, callback);
 ```
 
 ### Parameters
@@ -73,15 +70,12 @@ var apiInstance = new algorithmhub.UnitTestsApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.runRuntimeError(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.runRuntimeError(rid, callback);
 ```
 
 ### Parameters
@@ -119,15 +113,12 @@ var apiInstance = new algorithmhub.UnitTestsApi();
 
 var mid = "mid_example"; // String | The model id
 
+apiInstance.validatModel(mid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.validatModel(mid, callback);
 ```
 
 ### Parameters
@@ -165,15 +156,12 @@ var apiInstance = new algorithmhub.UnitTestsApi();
 
 var did = "did_example"; // String | The dataset id
 
+apiInstance.validateData(did).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.validateData(did, callback);
 ```
 
 ### Parameters
@@ -211,15 +199,12 @@ var apiInstance = new algorithmhub.UnitTestsApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.validateRun(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.validateRun(rid, callback);
 ```
 
 ### Parameters

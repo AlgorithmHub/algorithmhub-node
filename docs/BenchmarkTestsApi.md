@@ -23,15 +23,12 @@ var apiInstance = new algorithmhub.BenchmarkTestsApi();
 
 var mid = "mid_example"; // String | The model id
 
+apiInstance.validateBenchmark(mid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.validateBenchmark(mid, callback);
 ```
 
 ### Parameters

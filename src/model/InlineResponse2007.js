@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2007 model module.
    * @module model/InlineResponse2007
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**

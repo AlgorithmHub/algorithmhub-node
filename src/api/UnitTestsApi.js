@@ -31,7 +31,7 @@
   /**
    * UnitTests service.
    * @module api/UnitTestsApi
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**
@@ -45,22 +45,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the runKeyboardInterrupt operation.
-     * @callback module:api/UnitTestsApi~runKeyboardInterruptCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Check for keyboard interrupt
      * Check for keyboard interrupt during run
      * @param {String} rid The run id
-     * @param {module:api/UnitTestsApi~runKeyboardInterruptCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
-    this.runKeyboardInterrupt = function(rid, callback) {
+    this.runKeyboardInterruptWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -87,26 +79,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/test/keyboardInterrupt', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the runRuntimeError operation.
-     * @callback module:api/UnitTestsApi~runRuntimeErrorCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Check for keyboard interrupt
      * Check for keyboard interrupt during run
      * @param {String} rid The run id
-     * @param {module:api/UnitTestsApi~runRuntimeErrorCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
-    this.runRuntimeError = function(rid, callback) {
+    this.runKeyboardInterrupt = function(rid) {
+      return this.runKeyboardInterruptWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Check for keyboard interrupt
+     * Check for keyboard interrupt during run
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     */
+    this.runRuntimeErrorWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -133,26 +130,31 @@
       return this.apiClient.callApi(
         '/run/{rid}/test/runtimeError', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the validatModel operation.
-     * @callback module:api/UnitTestsApi~validatModelCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Check for keyboard interrupt
+     * Check for keyboard interrupt during run
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
+    this.runRuntimeError = function(rid) {
+      return this.runRuntimeErrorWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Runs the unit test cases
      * Runs the unit test cases specified for Model
      * @param {String} mid The model id
-     * @param {module:api/UnitTestsApi~validatModelCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
-    this.validatModel = function(mid, callback) {
+    this.validatModelWithHttpInfo = function(mid) {
       var postBody = null;
 
       // verify the required parameter 'mid' is set
@@ -179,26 +181,31 @@
       return this.apiClient.callApi(
         '/model/{mid}/test/validate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the validateData operation.
-     * @callback module:api/UnitTestsApi~validateDataCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Runs the unit test cases
+     * Runs the unit test cases specified for Model
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
+    this.validatModel = function(mid) {
+      return this.validatModelWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Checks valid data set
      * Checking for valid data set
      * @param {String} did The dataset id
-     * @param {module:api/UnitTestsApi~validateDataCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
-    this.validateData = function(did, callback) {
+    this.validateDataWithHttpInfo = function(did) {
       var postBody = null;
 
       // verify the required parameter 'did' is set
@@ -225,26 +232,31 @@
       return this.apiClient.callApi(
         '/data/{did}/test/validate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the validateRun operation.
-     * @callback module:api/UnitTestsApi~validateRunCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2007} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Checks valid data set
+     * Checking for valid data set
+     * @param {String} did The dataset id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
+    this.validateData = function(did) {
+      return this.validateDataWithHttpInfo(did)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Runs the unit test cases
      * Runs the unit test cases specified for Run
      * @param {String} rid The run id
-     * @param {module:api/UnitTestsApi~validateRunCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
-    this.validateRun = function(rid, callback) {
+    this.validateRunWithHttpInfo = function(rid) {
       var postBody = null;
 
       // verify the required parameter 'rid' is set
@@ -271,8 +283,21 @@
       return this.apiClient.callApi(
         '/run/{rid}/test/validate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Runs the unit test cases
+     * Runs the unit test cases specified for Run
+     * @param {String} rid The run id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     */
+    this.validateRun = function(rid) {
+      return this.validateRunWithHttpInfo(rid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

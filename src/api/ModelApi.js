@@ -31,7 +31,7 @@
   /**
    * Model service.
    * @module api/ModelApi
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**
@@ -45,22 +45,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the createModel operation.
-     * @callback module:api/ModelApi~createModelCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Create a new model
      * Create a new model
      * @param {module:model/Body} body The model configuration
-     * @param {module:api/ModelApi~createModelCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.createModel = function(body, callback) {
+    this.createModelWithHttpInfo = function(body) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
@@ -86,26 +78,31 @@
       return this.apiClient.callApi(
         '/model', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createModel_0 operation.
-     * @callback module:api/ModelApi~createModel_0Callback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new model
+     * Create a new model
+     * @param {module:model/Body} body The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.createModel = function(body) {
+      return this.createModelWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Create a new model
      * Create a new model
      * @param {module:model/Body2} body The model configuration
-     * @param {module:api/ModelApi~createModel_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.createModel_0 = function(body, callback) {
+    this.createModel_0WithHttpInfo = function(body) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
@@ -131,26 +128,31 @@
       return this.apiClient.callApi(
         '/service', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteModel operation.
-     * @callback module:api/ModelApi~deleteModelCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Create a new model
+     * Create a new model
+     * @param {module:model/Body2} body The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.createModel_0 = function(body) {
+      return this.createModel_0WithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete details of model
      * Deletes a single model based on the ID supplied
      * @param {String} sid Deletes the model based on the model id provided
-     * @param {module:api/ModelApi~deleteModelCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.deleteModel = function(sid, callback) {
+    this.deleteModelWithHttpInfo = function(sid) {
       var postBody = null;
 
       // verify the required parameter 'sid' is set
@@ -177,26 +179,31 @@
       return this.apiClient.callApi(
         '/model/{sid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the deleteModel_0 operation.
-     * @callback module:api/ModelApi~deleteModel_0Callback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Delete details of model
      * Deletes a single model based on the ID supplied
      * @param {String} sid Deletes the model based on the model id provided
-     * @param {module:api/ModelApi~deleteModel_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.deleteModel_0 = function(sid, callback) {
+    this.deleteModel = function(sid) {
+      return this.deleteModelWithHttpInfo(sid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete details of model
+     * Deletes a single model based on the ID supplied
+     * @param {String} sid Deletes the model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     */
+    this.deleteModel_0WithHttpInfo = function(sid) {
       var postBody = null;
 
       // verify the required parameter 'sid' is set
@@ -223,26 +230,31 @@
       return this.apiClient.callApi(
         '/service/{sid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the detailModel operation.
-     * @callback module:api/ModelApi~detailModelCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete details of model
+     * Deletes a single model based on the ID supplied
+     * @param {String} sid Deletes the model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.deleteModel_0 = function(sid) {
+      return this.deleteModel_0WithHttpInfo(sid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get details of model
      * Get details for an existing model
      * @param {String} sid The model id
-     * @param {module:api/ModelApi~detailModelCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
-    this.detailModel = function(sid, callback) {
+    this.detailModelWithHttpInfo = function(sid) {
       var postBody = null;
 
       // verify the required parameter 'sid' is set
@@ -269,26 +281,31 @@
       return this.apiClient.callApi(
         '/model/{sid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the detailModel_0 operation.
-     * @callback module:api/ModelApi~detailModel_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2001} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Get details of model
      * Get details for an existing model
      * @param {String} sid The model id
-     * @param {module:api/ModelApi~detailModel_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
-    this.detailModel_0 = function(sid, callback) {
+    this.detailModel = function(sid) {
+      return this.detailModelWithHttpInfo(sid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get details of model
+     * Get details for an existing model
+     * @param {String} sid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     */
+    this.detailModel_0WithHttpInfo = function(sid) {
       var postBody = null;
 
       // verify the required parameter 'sid' is set
@@ -315,27 +332,32 @@
       return this.apiClient.callApi(
         '/service/{sid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the editModel operation.
-     * @callback module:api/ModelApi~editModelCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get details of model
+     * Get details for an existing model
+     * @param {String} sid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
+    this.detailModel_0 = function(sid) {
+      return this.detailModel_0WithHttpInfo(sid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Edit a model
      * Edit an existing model
      * @param {String} sid The model id that needs to be edited
      * @param {module:model/Body1} body The model configuration
-     * @param {module:api/ModelApi~editModelCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.editModel = function(sid, body, callback) {
+    this.editModelWithHttpInfo = function(sid, body) {
       var postBody = body;
 
       // verify the required parameter 'sid' is set
@@ -367,27 +389,33 @@
       return this.apiClient.callApi(
         '/model/{sid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the editModel_0 operation.
-     * @callback module:api/ModelApi~editModel_0Callback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Edit a model
+     * Edit an existing model
+     * @param {String} sid The model id that needs to be edited
+     * @param {module:model/Body1} body The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.editModel = function(sid, body) {
+      return this.editModelWithHttpInfo(sid, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Edit a model
      * Edit an existing model
      * @param {String} sid The model id that needs to be edited
      * @param {module:model/Body3} body The model configuration
-     * @param {module:api/ModelApi~editModel_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.editModel_0 = function(sid, body, callback) {
+    this.editModel_0WithHttpInfo = function(sid, body) {
       var postBody = body;
 
       // verify the required parameter 'sid' is set
@@ -419,25 +447,31 @@
       return this.apiClient.callApi(
         '/service/{sid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listModels operation.
-     * @callback module:api/ModelApi~listModelsCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Edit a model
+     * Edit an existing model
+     * @param {String} sid The model id that needs to be edited
+     * @param {module:model/Body3} body The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.editModel_0 = function(sid, body) {
+      return this.editModel_0WithHttpInfo(sid, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Return models owned
      * Return list of models owned by user
-     * @param {module:api/ModelApi~listModelsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    this.listModels = function(callback) {
+    this.listModelsWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -458,25 +492,29 @@
       return this.apiClient.callApi(
         '/model', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listModels_0 operation.
-     * @callback module:api/ModelApi~listModels_0Callback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse200} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Return models owned
+     * Return list of models owned by user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
+    this.listModels = function() {
+      return this.listModelsWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Return models owned
      * Return list of models owned by user
-     * @param {module:api/ModelApi~listModels_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse200}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
-    this.listModels_0 = function(callback) {
+    this.listModels_0WithHttpInfo = function() {
       var postBody = null;
 
 
@@ -497,26 +535,30 @@
       return this.apiClient.callApi(
         '/service', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the runModel operation.
-     * @callback module:api/ModelApi~runModelCallback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Return models owned
+     * Return list of models owned by user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
+    this.listModels_0 = function() {
+      return this.listModels_0WithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Run a model
      * Run an existing model
      * @param {String} sid The model id to run
-     * @param {module:api/ModelApi~runModelCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.runModel = function(sid, callback) {
+    this.runModelWithHttpInfo = function(sid) {
       var postBody = null;
 
       // verify the required parameter 'sid' is set
@@ -543,26 +585,31 @@
       return this.apiClient.callApi(
         '/model/{sid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the runModel_0 operation.
-     * @callback module:api/ModelApi~runModel_0Callback
-     * @param {String} error Error message, if any.
-     * @param {Object} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Run a model
      * Run an existing model
      * @param {String} sid The model id to run
-     * @param {module:api/ModelApi~runModel_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.runModel_0 = function(sid, callback) {
+    this.runModel = function(sid) {
+      return this.runModelWithHttpInfo(sid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Run a model
+     * Run an existing model
+     * @param {String} sid The model id to run
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.runModel_0WithHttpInfo = function(sid) {
       var postBody = null;
 
       // verify the required parameter 'sid' is set
@@ -589,8 +636,21 @@
       return this.apiClient.callApi(
         '/service/{sid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Run a model
+     * Run an existing model
+     * @param {String} sid The model id to run
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.runModel_0 = function(sid) {
+      return this.runModel_0WithHttpInfo(sid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

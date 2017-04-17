@@ -27,15 +27,12 @@ var apiInstance = new algorithmhub.DataApi();
 
 var did = "did_example"; // String | The data id
 
+apiInstance.deleteData(did).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.deleteData(did, callback);
 ```
 
 ### Parameters
@@ -73,15 +70,12 @@ var apiInstance = new algorithmhub.DataApi();
 
 var did = "did_example"; // String | The data id
 
+apiInstance.downloadData(did).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.downloadData(did, callback);
 ```
 
 ### Parameters
@@ -119,15 +113,12 @@ var apiInstance = new algorithmhub.DataApi();
 
 var did = "did_example"; // String | The workspace base type.
 
+apiInstance.getData(did).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getData(did, callback);
 ```
 
 ### Parameters
@@ -162,15 +153,12 @@ Return a list data objects owned by user
 var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.DataApi();
+apiInstance.listData().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listData(callback);
 ```
 
 ### Parameters
@@ -205,15 +193,12 @@ var apiInstance = new algorithmhub.DataApi();
 
 var file = "/path/to/file.txt"; // File | The file to upload.
 
+apiInstance.uploadData(file).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.uploadData(file, callback);
 ```
 
 ### Parameters

@@ -33,15 +33,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.cloneWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.cloneWorkspace(wsid, callback);
 ```
 
 ### Parameters
@@ -79,15 +76,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var body = new algorithmhub.Body4(); // Body4 | The workspace type
 
+apiInstance.createWorkspace(body).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.createWorkspace(body, callback);
 ```
 
 ### Parameters
@@ -125,15 +119,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace id
 
+apiInstance.deleteWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.deleteWorkspace(wsid, callback);
 ```
 
 ### Parameters
@@ -171,15 +162,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace id
 
+apiInstance.detailWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.detailWorkspace(wsid, callback);
 ```
 
 ### Parameters
@@ -217,15 +205,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.listServices(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listServices(wsid, callback);
 ```
 
 ### Parameters
@@ -263,15 +248,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.listServices_0(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listServices_0(wsid, callback);
 ```
 
 ### Parameters
@@ -306,15 +288,12 @@ Returns a list of workspaces
 var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
+apiInstance.listWorkspaces().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listWorkspaces(callback);
 ```
 
 ### Parameters
@@ -349,15 +328,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.publishWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.publishWorkspace(wsid, callback);
 ```
 
 ### Parameters
@@ -395,15 +371,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.shareWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.shareWorkspace(wsid, callback);
 ```
 
 ### Parameters
@@ -441,15 +414,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.turnOffWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.turnOffWorkspace(wsid, callback);
 ```
 
 ### Parameters
@@ -487,15 +457,12 @@ var apiInstance = new algorithmhub.WorkspaceApi();
 
 var wsid = "wsid_example"; // String | The workspace base type.
 
+apiInstance.turnOnWorkspace(wsid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.turnOnWorkspace(wsid, callback);
 ```
 
 ### Parameters

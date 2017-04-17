@@ -36,15 +36,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.addFileRun(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.addFileRun(rid, callback);
 ```
 
 ### Parameters
@@ -82,15 +79,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.detailRun(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.detailRun(rid, callback);
 ```
 
 ### Parameters
@@ -128,15 +122,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.getInput(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getInput(rid, callback);
 ```
 
 ### Parameters
@@ -174,15 +165,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.getOutput(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getOutput(rid, callback);
 ```
 
 ### Parameters
@@ -222,15 +210,12 @@ var rid = "rid_example"; // String | The run id
 
 var fid = "fid_example"; // String | The file id
 
+apiInstance.getOutputFigure(rid, fid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getOutputFigure(rid, fid, callback);
 ```
 
 ### Parameters
@@ -271,15 +256,12 @@ var rid = "rid_example"; // String | The run id
 
 var filename = "filename_example"; // String | The filename
 
+apiInstance.getOutputFile(rid, filename).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getOutputFile(rid, filename, callback);
 ```
 
 ### Parameters
@@ -318,15 +300,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.getStatus(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.getStatus(rid, callback);
 ```
 
 ### Parameters
@@ -364,15 +343,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.listOutputFigures(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listOutputFigures(rid, callback);
 ```
 
 ### Parameters
@@ -410,15 +386,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.listOutputFiles(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listOutputFiles(rid, callback);
 ```
 
 ### Parameters
@@ -453,15 +426,12 @@ Get list of runs
 var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.RunApi();
+apiInstance.listRuns().then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.listRuns(callback);
 ```
 
 ### Parameters
@@ -496,15 +466,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The workspace base type.
 
+apiInstance.postError(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.postError(rid, callback);
 ```
 
 ### Parameters
@@ -542,15 +509,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The workspace base type.
 
+apiInstance.postFigure(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.postFigure(rid, callback);
 ```
 
 ### Parameters
@@ -588,15 +552,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.postStatus(rid).then(function(data) {
+  console.log('API called successfully. Returned data: ' + data);
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-};
-apiInstance.postStatus(rid, callback);
 ```
 
 ### Parameters
@@ -634,15 +595,12 @@ var apiInstance = new algorithmhub.RunApi();
 
 var rid = "rid_example"; // String | The run id
 
+apiInstance.setSuccess(rid).then(function() {
+  console.log('API called successfully.');
+}, function(error) {
+  console.error(error);
+});
 
-var callback = function(error, data, response) {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully.');
-  }
-};
-apiInstance.setSuccess(rid, callback);
 ```
 
 ### Parameters

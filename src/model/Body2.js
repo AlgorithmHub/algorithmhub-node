@@ -34,7 +34,7 @@
   /**
    * The Body2 model module.
    * @module model/Body2
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**

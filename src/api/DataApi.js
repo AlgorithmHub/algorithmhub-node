@@ -31,7 +31,7 @@
   /**
    * Data service.
    * @module api/DataApi
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**
@@ -45,21 +45,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the deleteData operation.
-     * @callback module:api/DataApi~deleteDataCallback
-     * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Deletes the data object
      * Deletes the data object
      * @param {String} did The data id
-     * @param {module:api/DataApi~deleteDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    this.deleteData = function(did, callback) {
+    this.deleteDataWithHttpInfo = function(did) {
       var postBody = null;
 
       // verify the required parameter 'did' is set
@@ -86,26 +79,31 @@
       return this.apiClient.callApi(
         '/data/{did}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the downloadData operation.
-     * @callback module:api/DataApi~downloadDataCallback
-     * @param {String} error Error message, if any.
-     * @param {File} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Deletes the data object
+     * Deletes the data object
+     * @param {String} did The data id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
+    this.deleteData = function(did) {
+      return this.deleteDataWithHttpInfo(did)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get the data object
      * Get the data object as a file
      * @param {String} did The data id
-     * @param {module:api/DataApi~downloadDataCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link File}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
      */
-    this.downloadData = function(did, callback) {
+    this.downloadDataWithHttpInfo = function(did) {
       var postBody = null;
 
       // verify the required parameter 'did' is set
@@ -132,26 +130,31 @@
       return this.apiClient.callApi(
         '/data/{did}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the getData operation.
-     * @callback module:api/DataApi~getDataCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2005} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get the data object
+     * Get the data object as a file
+     * @param {String} did The data id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
      */
+    this.downloadData = function(did) {
+      return this.downloadDataWithHttpInfo(did)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get information on the data
      * Get information on the data object
      * @param {String} did The workspace base type.
-     * @param {module:api/DataApi~getDataCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2005}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
-    this.getData = function(did, callback) {
+    this.getDataWithHttpInfo = function(did) {
       var postBody = null;
 
       // verify the required parameter 'did' is set
@@ -178,25 +181,30 @@
       return this.apiClient.callApi(
         '/data/{did}/info', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listData operation.
-     * @callback module:api/DataApi~listDataCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2005>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get information on the data
+     * Get information on the data object
+     * @param {String} did The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
+    this.getData = function(did) {
+      return this.getDataWithHttpInfo(did)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Return a list of data
      * Return a list data objects owned by user
-     * @param {module:api/DataApi~listDataCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2005>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2005>} and HTTP response
      */
-    this.listData = function(callback) {
+    this.listDataWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -217,26 +225,30 @@
       return this.apiClient.callApi(
         '/data', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the uploadData operation.
-     * @callback module:api/DataApi~uploadDataCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2006} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Return a list of data
+     * Return a list data objects owned by user
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2005>}
      */
+    this.listData = function() {
+      return this.listDataWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Upload data
      * Upload a data file and get data id
      * @param {File} file The file to upload.
-     * @param {module:api/DataApi~uploadDataCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2006}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
-    this.uploadData = function(file, callback) {
+    this.uploadDataWithHttpInfo = function(file) {
       var postBody = null;
 
       // verify the required parameter 'file' is set
@@ -263,8 +275,21 @@
       return this.apiClient.callApi(
         '/data', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Upload data
+     * Upload a data file and get data id
+     * @param {File} file The file to upload.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
+     */
+    this.uploadData = function(file) {
+      return this.uploadDataWithHttpInfo(file)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 

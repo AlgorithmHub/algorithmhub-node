@@ -31,7 +31,7 @@
   /**
    * Workspace service.
    * @module api/WorkspaceApi
-   * @version 0.2.1
+   * @version 0.2.3
    */
 
   /**
@@ -45,22 +45,14 @@
     this.apiClient = apiClient || ApiClient.instance;
 
 
-    /**
-     * Callback function to receive the result of the cloneWorkspace operation.
-     * @callback module:api/WorkspaceApi~cloneWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Clone the workspace
      * Clone the given workspace
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~cloneWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.cloneWorkspace = function(wsid, callback) {
+    this.cloneWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -87,26 +79,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/clone', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the createWorkspace operation.
-     * @callback module:api/WorkspaceApi~createWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Clone the workspace
+     * Clone the given workspace
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.cloneWorkspace = function(wsid) {
+      return this.cloneWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Creates new workspace
      * Creates a new workspace
      * @param {module:model/Body4} body The workspace type
-     * @param {module:api/WorkspaceApi~createWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.createWorkspace = function(body, callback) {
+    this.createWorkspaceWithHttpInfo = function(body) {
       var postBody = body;
 
       // verify the required parameter 'body' is set
@@ -132,26 +129,31 @@
       return this.apiClient.callApi(
         '/workspace', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the deleteWorkspace operation.
-     * @callback module:api/WorkspaceApi~deleteWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Creates new workspace
+     * Creates a new workspace
+     * @param {module:model/Body4} body The workspace type
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.createWorkspace = function(body) {
+      return this.createWorkspaceWithHttpInfo(body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Delete an existing workspace
      * Delete an existing workspace
      * @param {String} wsid The workspace id
-     * @param {module:api/WorkspaceApi~deleteWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.deleteWorkspace = function(wsid, callback) {
+    this.deleteWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -178,26 +180,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the detailWorkspace operation.
-     * @callback module:api/WorkspaceApi~detailWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/InlineResponse2003} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Delete an existing workspace
+     * Delete an existing workspace
+     * @param {String} wsid The workspace id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.deleteWorkspace = function(wsid) {
+      return this.deleteWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Gets workspace metadata
      * Gets workspace metadata
      * @param {String} wsid The workspace id
-     * @param {module:api/WorkspaceApi~detailWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/InlineResponse2003}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
-    this.detailWorkspace = function(wsid, callback) {
+    this.detailWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -224,26 +231,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listServices operation.
-     * @callback module:api/WorkspaceApi~listServicesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Gets workspace metadata
+     * Gets workspace metadata
+     * @param {String} wsid The workspace id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
+    this.detailWorkspace = function(wsid) {
+      return this.detailWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Get models associated
      * Get models associated with an exsisting workspace
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~listServicesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2004>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2004>} and HTTP response
      */
-    this.listServices = function(wsid, callback) {
+    this.listServicesWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -270,26 +282,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/model', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
-
-    /**
-     * Callback function to receive the result of the listServices_0 operation.
-     * @callback module:api/WorkspaceApi~listServices_0Callback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2004>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
 
     /**
      * Get models associated
      * Get models associated with an exsisting workspace
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~listServices_0Callback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2004>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2004>}
      */
-    this.listServices_0 = function(wsid, callback) {
+    this.listServices = function(wsid) {
+      return this.listServicesWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get models associated
+     * Get models associated with an exsisting workspace
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2004>} and HTTP response
+     */
+    this.listServices_0WithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -316,25 +333,30 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/service', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the listWorkspaces operation.
-     * @callback module:api/WorkspaceApi~listWorkspacesCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/InlineResponse2003>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Get models associated
+     * Get models associated with an exsisting workspace
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2004>}
      */
+    this.listServices_0 = function(wsid) {
+      return this.listServices_0WithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Returns list of workspaces
      * Returns a list of workspaces
-     * @param {module:api/WorkspaceApi~listWorkspacesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/InlineResponse2003>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2003>} and HTTP response
      */
-    this.listWorkspaces = function(callback) {
+    this.listWorkspacesWithHttpInfo = function() {
       var postBody = null;
 
 
@@ -355,26 +377,30 @@
       return this.apiClient.callApi(
         '/workspace', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the publishWorkspace operation.
-     * @callback module:api/WorkspaceApi~publishWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Returns list of workspaces
+     * Returns a list of workspaces
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2003>}
      */
+    this.listWorkspaces = function() {
+      return this.listWorkspacesWithHttpInfo()
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Publish workspace to repo
      * Publish current workspace to repo
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~publishWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.publishWorkspace = function(wsid, callback) {
+    this.publishWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -401,26 +427,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/publish', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the shareWorkspace operation.
-     * @callback module:api/WorkspaceApi~shareWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Publish workspace to repo
+     * Publish current workspace to repo
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.publishWorkspace = function(wsid) {
+      return this.publishWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Share workspace with another user
      * Share workspace with another user
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~shareWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.shareWorkspace = function(wsid, callback) {
+    this.shareWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -447,26 +478,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/share', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the turnOffWorkspace operation.
-     * @callback module:api/WorkspaceApi~turnOffWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Share workspace with another user
+     * Share workspace with another user
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.shareWorkspace = function(wsid) {
+      return this.shareWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Turn off the workspace
      * Turn off the workspace
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~turnOffWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.turnOffWorkspace = function(wsid, callback) {
+    this.turnOffWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -493,26 +529,31 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/off', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Callback function to receive the result of the turnOnWorkspace operation.
-     * @callback module:api/WorkspaceApi~turnOnWorkspaceCallback
-     * @param {String} error Error message, if any.
-     * @param {'String'} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
+     * Turn off the workspace
+     * Turn off the workspace
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
+    this.turnOffWorkspace = function(wsid) {
+      return this.turnOffWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
 
     /**
      * Turn on the workspace
      * Turn on the workspace
      * @param {String} wsid The workspace base type.
-     * @param {module:api/WorkspaceApi~turnOnWorkspaceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.turnOnWorkspace = function(wsid, callback) {
+    this.turnOnWorkspaceWithHttpInfo = function(wsid) {
       var postBody = null;
 
       // verify the required parameter 'wsid' is set
@@ -539,8 +580,21 @@
       return this.apiClient.callApi(
         '/workspace/{wsid}/on', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+        authNames, contentTypes, accepts, returnType
       );
+    }
+
+    /**
+     * Turn on the workspace
+     * Turn on the workspace
+     * @param {String} wsid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     */
+    this.turnOnWorkspace = function(wsid) {
+      return this.turnOnWorkspaceWithHttpInfo(wsid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
     }
   };
 
