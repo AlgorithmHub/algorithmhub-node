@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('deleteModelTrain', function() {
+      it('should call deleteModelTrain successfully', function(done) {
+        //uncomment below and update the code to test deleteModelTrain
+        //instance.deleteModelTrain(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('deleteModel_0', function() {
       it('should call deleteModel_0 successfully', function(done) {
         //uncomment below and update the code to test deleteModel_0
@@ -118,10 +128,40 @@
         done();
       });
     });
+    describe('editModelTrain', function() {
+      it('should call editModelTrain successfully', function(done) {
+        //uncomment below and update the code to test editModelTrain
+        //instance.editModelTrain(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('editModel_0', function() {
       it('should call editModel_0 successfully', function(done) {
         //uncomment below and update the code to test editModel_0
         //instance.editModel_0(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('fitModelTrain', function() {
+      it('should call fitModelTrain successfully', function(done) {
+        //uncomment below and update the code to test fitModelTrain
+        //instance.fitModelTrain(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listModelTrain', function() {
+      it('should call listModelTrain successfully', function(done) {
+        //uncomment below and update the code to test listModelTrain
+        //instance.listModelTrain(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -152,6 +192,16 @@
       it('should call runModel successfully', function(done) {
         //uncomment below and update the code to test runModel
         //instance.runModel(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('runModelTrain', function() {
+      it('should call runModelTrain successfully', function(done) {
+        //uncomment below and update the code to test runModelTrain
+        //instance.runModelTrain(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

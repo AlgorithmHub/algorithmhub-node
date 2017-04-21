@@ -14,24 +14,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponseDefault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse20013'), require('../model/InlineResponse20014'), require('../model/InlineResponseDefault'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.DataApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse2005, root.algorithmhub.InlineResponse2006, root.algorithmhub.InlineResponseDefault);
+    root.algorithmhub.DataApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse20013, root.algorithmhub.InlineResponse20014, root.algorithmhub.InlineResponseDefault);
   }
-}(this, function(ApiClient, InlineResponse2005, InlineResponse2006, InlineResponseDefault) {
+}(this, function(ApiClient, InlineResponse20013, InlineResponse20014, InlineResponseDefault) {
   'use strict';
 
   /**
    * Data service.
    * @module api/DataApi
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -152,7 +152,7 @@
      * Get information on the data
      * Get information on the data object
      * @param {String} did The workspace base type.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20013} and HTTP response
      */
     this.getDataWithHttpInfo = function(did) {
       var postBody = null;
@@ -176,7 +176,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2005;
+      var returnType = InlineResponse20013;
 
       return this.apiClient.callApi(
         '/data/{did}/info', 'GET',
@@ -189,7 +189,7 @@
      * Get information on the data
      * Get information on the data object
      * @param {String} did The workspace base type.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20013}
      */
     this.getData = function(did) {
       return this.getDataWithHttpInfo(did)
@@ -202,7 +202,7 @@
     /**
      * Return a list of data
      * Return a list data objects owned by user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2005>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse20013>} and HTTP response
      */
     this.listDataWithHttpInfo = function() {
       var postBody = null;
@@ -220,7 +220,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = [InlineResponse2005];
+      var returnType = [InlineResponse20013];
 
       return this.apiClient.callApi(
         '/data', 'GET',
@@ -232,7 +232,7 @@
     /**
      * Return a list of data
      * Return a list data objects owned by user
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2005>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse20013>}
      */
     this.listData = function() {
       return this.listDataWithHttpInfo()
@@ -246,7 +246,7 @@
      * Upload data
      * Upload a data file and get data id
      * @param {File} file The file to upload.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20014} and HTTP response
      */
     this.uploadDataWithHttpInfo = function(file) {
       var postBody = null;
@@ -270,7 +270,7 @@
       var authNames = [];
       var contentTypes = ['multipart/form-data'];
       var accepts = [];
-      var returnType = InlineResponse2006;
+      var returnType = InlineResponse20014;
 
       return this.apiClient.callApi(
         '/data', 'POST',
@@ -283,7 +283,7 @@
      * Upload data
      * Upload a data file and get data id
      * @param {File} file The file to upload.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20014}
      */
     this.uploadData = function(file) {
       return this.uploadDataWithHttpInfo(file)

@@ -3,11 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**sid** | **String** |  | [optional] 
-**tags** | **[String]** |  | [optional] 
-**runCount** | **Number** |  | [optional] 
-**isPublic** | **Boolean** |  | [optional] 
+**mid** | **String** |  | [optional] 
+**rid** | **String** |  | [optional] 
+**owner** | **String** |  | [optional] 
 **timeCreated** | **Date** |  | [optional] 
 
 

@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new algorithmhub.Body3();
+    instance = new algorithmhub.InlineResponse20018();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,16 @@
       object[property] = value;
   }
 
-  describe('Body3', function() {
-    it('should create an instance of Body3', function() {
-      // uncomment below and update the code to test Body3
-      //var instane = new algorithmhub.Body3();
-      //expect(instance).to.be.a(algorithmhub.Body3);
+  describe('InlineResponse20018', function() {
+    it('should create an instance of InlineResponse20018', function() {
+      // uncomment below and update the code to test InlineResponse20018
+      //var instane = new algorithmhub.InlineResponse20018();
+      //expect(instance).to.be.a(algorithmhub.InlineResponse20018);
     });
 
-    it('should have the property wsid (base name: "wsid")', function() {
-      // uncomment below and update the code to test the property wsid
-      //var instane = new algorithmhub.Body3();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property inputs (base name: "inputs")', function() {
-      // uncomment below and update the code to test the property inputs
-      //var instane = new algorithmhub.Body3();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property f (base name: "f")', function() {
-      // uncomment below and update the code to test the property f
-      //var instane = new algorithmhub.Body3();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property outputs (base name: "outputs")', function() {
-      // uncomment below and update the code to test the property outputs
-      //var instane = new algorithmhub.Body3();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isPublic (base name: "isPublic")', function() {
-      // uncomment below and update the code to test the property isPublic
-      //var instane = new algorithmhub.Body3();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instane = new algorithmhub.InlineResponse20018();
       //expect(instance).to.be();
     });
 

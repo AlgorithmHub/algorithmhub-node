@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2006 model module.
    * @module model/InlineResponse2006
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -44,6 +44,7 @@
    */
   var exports = function() {
     var _this = this;
+
 
 
   };
@@ -59,17 +60,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('id')) {
-        obj['id'] = ApiClient.convertToType(data['id'], 'String');
+      if (data.hasOwnProperty('f')) {
+        obj['f'] = ApiClient.convertToType(data['f'], 'String');
+      }
+      if (data.hasOwnProperty('outputs')) {
+        obj['outputs'] = ApiClient.convertToType(data['outputs'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} id
+   * @member {String} f
    */
-  exports.prototype['id'] = undefined;
+  exports.prototype['f'] = undefined;
+  /**
+   * @member {String} outputs
+   */
+  exports.prototype['outputs'] = undefined;
 
 
 

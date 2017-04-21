@@ -54,38 +54,26 @@
       //expect(instance).to.be.a(algorithmhub.InlineResponse2005);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property wmid (base name: "wmid")', function() {
+      // uncomment below and update the code to test the property wmid
       //var instane = new algorithmhub.InlineResponse2005();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
+    it('should have the property mid (base name: "mid")', function() {
+      // uncomment below and update the code to test the property mid
       //var instane = new algorithmhub.InlineResponse2005();
       //expect(instance).to.be();
     });
 
-    it('should have the property did (base name: "did")', function() {
-      // uncomment below and update the code to test the property did
+    it('should have the property rid (base name: "rid")', function() {
+      // uncomment below and update the code to test the property rid
       //var instane = new algorithmhub.InlineResponse2005();
       //expect(instance).to.be();
     });
 
-    it('should have the property isDir (base name: "isDir")', function() {
-      // uncomment below and update the code to test the property isDir
-      //var instane = new algorithmhub.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property size (base name: "size")', function() {
-      // uncomment below and update the code to test the property size
-      //var instane = new algorithmhub.InlineResponse2005();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property timeCreated (base name: "timeCreated")', function() {
-      // uncomment below and update the code to test the property timeCreated
+    it('should have the property isDone (base name: "isDone")', function() {
+      // uncomment below and update the code to test the property isDone
       //var instane = new algorithmhub.InlineResponse2005();
       //expect(instance).to.be();
     });

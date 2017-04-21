@@ -14,24 +14,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Body4', 'model/InlineResponse2003', 'model/InlineResponse2004'], factory);
+    define(['ApiClient', 'model/Body2', 'model/InlineResponse20011', 'model/InlineResponse20012'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Body4'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'));
+    module.exports = factory(require('../ApiClient'), require('../model/Body2'), require('../model/InlineResponse20011'), require('../model/InlineResponse20012'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.WorkspaceApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.Body4, root.algorithmhub.InlineResponse2003, root.algorithmhub.InlineResponse2004);
+    root.algorithmhub.WorkspaceApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.Body2, root.algorithmhub.InlineResponse20011, root.algorithmhub.InlineResponse20012);
   }
-}(this, function(ApiClient, Body4, InlineResponse2003, InlineResponse2004) {
+}(this, function(ApiClient, Body2, InlineResponse20011, InlineResponse20012) {
   'use strict';
 
   /**
    * Workspace service.
    * @module api/WorkspaceApi
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -49,20 +49,20 @@
     /**
      * Clone the workspace
      * Clone the given workspace
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.cloneWorkspaceWithHttpInfo = function(wsid) {
+    this.cloneWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling cloneWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling cloneWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -77,7 +77,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/clone', 'POST',
+        '/workspace/{wmid}/clone', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -86,11 +86,11 @@
     /**
      * Clone the workspace
      * Clone the given workspace
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.cloneWorkspace = function(wsid) {
-      return this.cloneWorkspaceWithHttpInfo(wsid)
+    this.cloneWorkspace = function(wmid) {
+      return this.cloneWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -100,7 +100,7 @@
     /**
      * Creates new workspace
      * Creates a new workspace
-     * @param {module:model/Body4} body The workspace type
+     * @param {module:model/Body2} body The workspace type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
     this.createWorkspaceWithHttpInfo = function(body) {
@@ -136,7 +136,7 @@
     /**
      * Creates new workspace
      * Creates a new workspace
-     * @param {module:model/Body4} body The workspace type
+     * @param {module:model/Body2} body The workspace type
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
     this.createWorkspace = function(body) {
@@ -150,20 +150,20 @@
     /**
      * Delete an existing workspace
      * Delete an existing workspace
-     * @param {String} wsid The workspace id
+     * @param {String} wmid The workspace id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.deleteWorkspaceWithHttpInfo = function(wsid) {
+    this.deleteWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling deleteWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling deleteWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -178,7 +178,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}', 'DELETE',
+        '/workspace/{wmid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -187,11 +187,11 @@
     /**
      * Delete an existing workspace
      * Delete an existing workspace
-     * @param {String} wsid The workspace id
+     * @param {String} wmid The workspace id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.deleteWorkspace = function(wsid) {
-      return this.deleteWorkspaceWithHttpInfo(wsid)
+    this.deleteWorkspace = function(wmid) {
+      return this.deleteWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -201,20 +201,20 @@
     /**
      * Gets workspace metadata
      * Gets workspace metadata
-     * @param {String} wsid The workspace id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
+     * @param {String} wmid The workspace id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20011} and HTTP response
      */
-    this.detailWorkspaceWithHttpInfo = function(wsid) {
+    this.detailWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling detailWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling detailWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -226,10 +226,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2003;
+      var returnType = InlineResponse20011;
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}', 'GET',
+        '/workspace/{wmid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -238,11 +238,11 @@
     /**
      * Gets workspace metadata
      * Gets workspace metadata
-     * @param {String} wsid The workspace id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     * @param {String} wmid The workspace id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20011}
      */
-    this.detailWorkspace = function(wsid) {
-      return this.detailWorkspaceWithHttpInfo(wsid)
+    this.detailWorkspace = function(wmid) {
+      return this.detailWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -252,20 +252,20 @@
     /**
      * Get models associated
      * Get models associated with an exsisting workspace
-     * @param {String} wsid The workspace base type.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2004>} and HTTP response
+     * @param {String} wmid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse20012>} and HTTP response
      */
-    this.listServicesWithHttpInfo = function(wsid) {
+    this.listServicesWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling listServices");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling listServices");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -277,10 +277,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = [InlineResponse2004];
+      var returnType = [InlineResponse20012];
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/model', 'GET',
+        '/workspace/{wmid}/model', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -289,11 +289,11 @@
     /**
      * Get models associated
      * Get models associated with an exsisting workspace
-     * @param {String} wsid The workspace base type.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2004>}
+     * @param {String} wmid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse20012>}
      */
-    this.listServices = function(wsid) {
-      return this.listServicesWithHttpInfo(wsid)
+    this.listServices = function(wmid) {
+      return this.listServicesWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -303,20 +303,20 @@
     /**
      * Get models associated
      * Get models associated with an exsisting workspace
-     * @param {String} wsid The workspace base type.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2004>} and HTTP response
+     * @param {String} wmid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse20012>} and HTTP response
      */
-    this.listServices_0WithHttpInfo = function(wsid) {
+    this.listServices_0WithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling listServices_0");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling listServices_0");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -328,10 +328,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = [InlineResponse2004];
+      var returnType = [InlineResponse20012];
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/service', 'GET',
+        '/workspace/{wmid}/service', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -340,11 +340,11 @@
     /**
      * Get models associated
      * Get models associated with an exsisting workspace
-     * @param {String} wsid The workspace base type.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2004>}
+     * @param {String} wmid The workspace base type.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse20012>}
      */
-    this.listServices_0 = function(wsid) {
-      return this.listServices_0WithHttpInfo(wsid)
+    this.listServices_0 = function(wmid) {
+      return this.listServices_0WithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -354,7 +354,7 @@
     /**
      * Returns list of workspaces
      * Returns a list of workspaces
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse2003>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/InlineResponse20011>} and HTTP response
      */
     this.listWorkspacesWithHttpInfo = function() {
       var postBody = null;
@@ -372,7 +372,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = [InlineResponse2003];
+      var returnType = [InlineResponse20011];
 
       return this.apiClient.callApi(
         '/workspace', 'GET',
@@ -384,7 +384,7 @@
     /**
      * Returns list of workspaces
      * Returns a list of workspaces
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse2003>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/InlineResponse20011>}
      */
     this.listWorkspaces = function() {
       return this.listWorkspacesWithHttpInfo()
@@ -397,20 +397,20 @@
     /**
      * Publish workspace to repo
      * Publish current workspace to repo
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.publishWorkspaceWithHttpInfo = function(wsid) {
+    this.publishWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling publishWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling publishWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -425,7 +425,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/publish', 'POST',
+        '/workspace/{wmid}/publish', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -434,11 +434,11 @@
     /**
      * Publish workspace to repo
      * Publish current workspace to repo
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.publishWorkspace = function(wsid) {
-      return this.publishWorkspaceWithHttpInfo(wsid)
+    this.publishWorkspace = function(wmid) {
+      return this.publishWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -448,20 +448,20 @@
     /**
      * Share workspace with another user
      * Share workspace with another user
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.shareWorkspaceWithHttpInfo = function(wsid) {
+    this.shareWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling shareWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling shareWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -476,7 +476,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/share', 'POST',
+        '/workspace/{wmid}/share', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -485,11 +485,11 @@
     /**
      * Share workspace with another user
      * Share workspace with another user
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.shareWorkspace = function(wsid) {
-      return this.shareWorkspaceWithHttpInfo(wsid)
+    this.shareWorkspace = function(wmid) {
+      return this.shareWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -499,20 +499,20 @@
     /**
      * Turn off the workspace
      * Turn off the workspace
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.turnOffWorkspaceWithHttpInfo = function(wsid) {
+    this.turnOffWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling turnOffWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling turnOffWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -527,7 +527,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/off', 'POST',
+        '/workspace/{wmid}/off', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -536,11 +536,11 @@
     /**
      * Turn off the workspace
      * Turn off the workspace
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.turnOffWorkspace = function(wsid) {
-      return this.turnOffWorkspaceWithHttpInfo(wsid)
+    this.turnOffWorkspace = function(wmid) {
+      return this.turnOffWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -550,20 +550,20 @@
     /**
      * Turn on the workspace
      * Turn on the workspace
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.turnOnWorkspaceWithHttpInfo = function(wsid) {
+    this.turnOnWorkspaceWithHttpInfo = function(wmid) {
       var postBody = null;
 
-      // verify the required parameter 'wsid' is set
-      if (wsid === undefined || wsid === null) {
-        throw new Error("Missing the required parameter 'wsid' when calling turnOnWorkspace");
+      // verify the required parameter 'wmid' is set
+      if (wmid === undefined || wmid === null) {
+        throw new Error("Missing the required parameter 'wmid' when calling turnOnWorkspace");
       }
 
 
       var pathParams = {
-        'wsid': wsid
+        'wmid': wmid
       };
       var queryParams = {
       };
@@ -578,7 +578,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/workspace/{wsid}/on', 'POST',
+        '/workspace/{wmid}/on', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -587,11 +587,11 @@
     /**
      * Turn on the workspace
      * Turn on the workspace
-     * @param {String} wsid The workspace base type.
+     * @param {String} wmid The workspace base type.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.turnOnWorkspace = function(wsid) {
-      return this.turnOnWorkspaceWithHttpInfo(wsid)
+    this.turnOnWorkspace = function(wmid) {
+      return this.turnOnWorkspaceWithHttpInfo(wmid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

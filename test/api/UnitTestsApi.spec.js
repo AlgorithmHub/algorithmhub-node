@@ -48,6 +48,36 @@
   }
 
   describe('UnitTestsApi', function() {
+    describe('createTest', function() {
+      it('should call createTest successfully', function(done) {
+        //uncomment below and update the code to test createTest
+        //instance.createTest(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteTest', function() {
+      it('should call deleteTest successfully', function(done) {
+        //uncomment below and update the code to test deleteTest
+        //instance.deleteTest(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listTest', function() {
+      it('should call listTest successfully', function(done) {
+        //uncomment below and update the code to test listTest
+        //instance.listTest(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('runKeyboardInterrupt', function() {
       it('should call runKeyboardInterrupt successfully', function(done) {
         //uncomment below and update the code to test runKeyboardInterrupt
@@ -68,10 +98,20 @@
         done();
       });
     });
-    describe('validatModel', function() {
-      it('should call validatModel successfully', function(done) {
-        //uncomment below and update the code to test validatModel
-        //instance.validatModel(function(error) {
+    describe('runTest', function() {
+      it('should call runTest successfully', function(done) {
+        //uncomment below and update the code to test runTest
+        //instance.runTest(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateTest', function() {
+      it('should call updateTest successfully', function(done) {
+        //uncomment below and update the code to test updateTest
+        //instance.updateTest(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});
@@ -82,6 +122,16 @@
       it('should call validateData successfully', function(done) {
         //uncomment below and update the code to test validateData
         //instance.validateData(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('validateModel', function() {
+      it('should call validateModel successfully', function(done) {
+        //uncomment below and update the code to test validateModel
+        //instance.validateModel(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

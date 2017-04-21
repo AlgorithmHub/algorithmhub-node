@@ -65,7 +65,7 @@ No authorization required
 
 <a name="detailRun"></a>
 # **detailRun**
-> InlineResponse2002 detailRun(rid)
+> InlineResponse2005 detailRun(rid)
 
 Get info about run
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ No authorization required
 
 <a name="getInput"></a>
 # **getInput**
-> Object getInput(rid)
+> InlineResponse2006 getInput(rid)
 
 Input parameters
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ No authorization required
 
 <a name="getOutput"></a>
 # **getOutput**
-> Object getOutput(rid)
+> InlineResponse2007 getOutput(rid)
 
 Get the output
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ No authorization required
 
 <a name="getOutputFile"></a>
 # **getOutputFile**
-> File getOutputFile(rid, filename)
+> InlineResponse2009 getOutputFile(rid, filename)
 
 Get a file
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -329,7 +329,7 @@ No authorization required
 
 <a name="listOutputFigures"></a>
 # **listOutputFigures**
-> &#39;String&#39; listOutputFigures(rid)
+> InlineResponse20010 listOutputFigures(rid)
 
 Get list of figures
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ No authorization required
 
 <a name="listOutputFiles"></a>
 # **listOutputFiles**
-> &#39;String&#39; listOutputFiles(rid)
+> InlineResponse2008 listOutputFiles(rid)
 
 Get list of output files
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**&#39;String&#39;**
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -415,7 +415,7 @@ No authorization required
 
 <a name="listRuns"></a>
 # **listRuns**
-> [Object] listRuns()
+> InlineResponse2004 listRuns()
 
 Get list of runs
 
@@ -439,7 +439,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**[Object]**
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

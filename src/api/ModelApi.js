@@ -14,24 +14,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Body', 'model/Body1', 'model/Body2', 'model/Body3', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/Body', 'model/Body1', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponseDefault', 'model/ModelName', 'model/ModelName1'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Body'), require('../model/Body1'), require('../model/Body2'), require('../model/Body3'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/Body'), require('../model/Body1'), require('../model/InlineResponse200'), require('../model/InlineResponse2001'), require('../model/InlineResponse2002'), require('../model/InlineResponse2003'), require('../model/InlineResponseDefault'), require('../model/ModelName'), require('../model/ModelName1'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.ModelApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.Body, root.algorithmhub.Body1, root.algorithmhub.Body2, root.algorithmhub.Body3, root.algorithmhub.InlineResponse200, root.algorithmhub.InlineResponse2001, root.algorithmhub.InlineResponseDefault);
+    root.algorithmhub.ModelApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.Body, root.algorithmhub.Body1, root.algorithmhub.InlineResponse200, root.algorithmhub.InlineResponse2001, root.algorithmhub.InlineResponse2002, root.algorithmhub.InlineResponse2003, root.algorithmhub.InlineResponseDefault, root.algorithmhub.ModelName, root.algorithmhub.ModelName1);
   }
-}(this, function(ApiClient, Body, Body1, Body2, Body3, InlineResponse200, InlineResponse2001, InlineResponseDefault) {
+}(this, function(ApiClient, Body, Body1, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, InlineResponseDefault, ModelName, ModelName1) {
   'use strict';
 
   /**
    * Model service.
    * @module api/ModelApi
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -49,15 +49,15 @@
     /**
      * Create a new model
      * Create a new model
-     * @param {module:model/Body} body The model configuration
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @param {module:model/ModelName} modelName The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
-    this.createModelWithHttpInfo = function(body) {
-      var postBody = body;
+    this.createModelWithHttpInfo = function(modelName) {
+      var postBody = modelName;
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createModel");
+      // verify the required parameter 'modelName' is set
+      if (modelName === undefined || modelName === null) {
+        throw new Error("Missing the required parameter 'modelName' when calling createModel");
       }
 
 
@@ -73,7 +73,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = 'String';
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
         '/model', 'POST',
@@ -85,11 +85,11 @@
     /**
      * Create a new model
      * Create a new model
-     * @param {module:model/Body} body The model configuration
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @param {module:model/ModelName} modelName The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
-    this.createModel = function(body) {
-      return this.createModelWithHttpInfo(body)
+    this.createModel = function(modelName) {
+      return this.createModelWithHttpInfo(modelName)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -99,15 +99,15 @@
     /**
      * Create a new model
      * Create a new model
-     * @param {module:model/Body2} body The model configuration
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @param {module:model/ModelName1} modelName The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
      */
-    this.createModel_0WithHttpInfo = function(body) {
-      var postBody = body;
+    this.createModel_0WithHttpInfo = function(modelName) {
+      var postBody = modelName;
 
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling createModel_0");
+      // verify the required parameter 'modelName' is set
+      if (modelName === undefined || modelName === null) {
+        throw new Error("Missing the required parameter 'modelName' when calling createModel_0");
       }
 
 
@@ -123,7 +123,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = 'String';
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
         '/service', 'POST',
@@ -135,11 +135,11 @@
     /**
      * Create a new model
      * Create a new model
-     * @param {module:model/Body2} body The model configuration
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @param {module:model/ModelName1} modelName The model configuration
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
      */
-    this.createModel_0 = function(body) {
-      return this.createModel_0WithHttpInfo(body)
+    this.createModel_0 = function(modelName) {
+      return this.createModel_0WithHttpInfo(modelName)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -149,20 +149,78 @@
     /**
      * Delete details of model
      * Deletes a single model based on the ID supplied
-     * @param {String} sid Deletes the model based on the model id provided
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @param {String} mid Deletes the model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
-    this.deleteModelWithHttpInfo = function(sid) {
+    this.deleteModelWithHttpInfo = function(mid) {
       var postBody = null;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling deleteModel");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling deleteModel");
       }
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse2003;
+
+      return this.apiClient.callApi(
+        '/model/{mid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete details of model
+     * Deletes a single model based on the ID supplied
+     * @param {String} mid Deletes the model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
+     */
+    this.deleteModel = function(mid) {
+      return this.deleteModelWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete trained model
+     * Deletes a single trained model based on the ID supplied
+     * @param {String} mid Deletes the trained model based on the model id provided
+     * @param {String} trid Deletes the trained model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     */
+    this.deleteModelTrainWithHttpInfo = function(mid, trid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling deleteModelTrain");
+      }
+
+      // verify the required parameter 'trid' is set
+      if (trid === undefined || trid === null) {
+        throw new Error("Missing the required parameter 'trid' when calling deleteModelTrain");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'trid': trid
       };
       var queryParams = {
       };
@@ -177,20 +235,21 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/model/{sid}', 'DELETE',
+        '/model/{mid}/train/{trid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Delete details of model
-     * Deletes a single model based on the ID supplied
-     * @param {String} sid Deletes the model based on the model id provided
+     * Delete trained model
+     * Deletes a single trained model based on the ID supplied
+     * @param {String} mid Deletes the trained model based on the model id provided
+     * @param {String} trid Deletes the trained model based on the model id provided
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.deleteModel = function(sid) {
-      return this.deleteModelWithHttpInfo(sid)
+    this.deleteModelTrain = function(mid, trid) {
+      return this.deleteModelTrainWithHttpInfo(mid, trid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -200,20 +259,20 @@
     /**
      * Delete details of model
      * Deletes a single model based on the ID supplied
-     * @param {String} sid Deletes the model based on the model id provided
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @param {String} mid Deletes the model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
-    this.deleteModel_0WithHttpInfo = function(sid) {
+    this.deleteModel_0WithHttpInfo = function(mid) {
       var postBody = null;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling deleteModel_0");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling deleteModel_0");
       }
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -225,10 +284,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = 'String';
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
-        '/service/{sid}', 'DELETE',
+        '/service/{mid}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -237,11 +296,11 @@
     /**
      * Delete details of model
      * Deletes a single model based on the ID supplied
-     * @param {String} sid Deletes the model based on the model id provided
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @param {String} mid Deletes the model based on the model id provided
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
-    this.deleteModel_0 = function(sid) {
-      return this.deleteModel_0WithHttpInfo(sid)
+    this.deleteModel_0 = function(mid) {
+      return this.deleteModel_0WithHttpInfo(mid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -251,20 +310,20 @@
     /**
      * Get details of model
      * Get details for an existing model
-     * @param {String} sid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
-    this.detailModelWithHttpInfo = function(sid) {
+    this.detailModelWithHttpInfo = function(mid) {
       var postBody = null;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling detailModel");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling detailModel");
       }
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -276,10 +335,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2001;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
-        '/model/{sid}', 'GET',
+        '/model/{mid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -288,11 +347,11 @@
     /**
      * Get details of model
      * Get details for an existing model
-     * @param {String} sid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
-    this.detailModel = function(sid) {
-      return this.detailModelWithHttpInfo(sid)
+    this.detailModel = function(mid) {
+      return this.detailModelWithHttpInfo(mid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -302,20 +361,20 @@
     /**
      * Get details of model
      * Get details for an existing model
-     * @param {String} sid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
-    this.detailModel_0WithHttpInfo = function(sid) {
+    this.detailModel_0WithHttpInfo = function(mid) {
       var postBody = null;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling detailModel_0");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling detailModel_0");
       }
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -327,10 +386,10 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2001;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
-        '/service/{sid}', 'GET',
+        '/service/{mid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -339,11 +398,11 @@
     /**
      * Get details of model
      * Get details for an existing model
-     * @param {String} sid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
-    this.detailModel_0 = function(sid) {
-      return this.detailModel_0WithHttpInfo(sid)
+    this.detailModel_0 = function(mid) {
+      return this.detailModel_0WithHttpInfo(mid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -353,16 +412,16 @@
     /**
      * Edit a model
      * Edit an existing model
-     * @param {String} sid The model id that needs to be edited
-     * @param {module:model/Body1} body The model configuration
+     * @param {String} mid The model id that needs to be edited
+     * @param {module:model/Body} body The model configuration
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.editModelWithHttpInfo = function(sid, body) {
+    this.editModelWithHttpInfo = function(mid, body) {
       var postBody = body;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling editModel");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling editModel");
       }
 
       // verify the required parameter 'body' is set
@@ -372,7 +431,7 @@
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -387,7 +446,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/model/{sid}', 'PUT',
+        '/model/{mid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -396,12 +455,71 @@
     /**
      * Edit a model
      * Edit an existing model
-     * @param {String} sid The model id that needs to be edited
-     * @param {module:model/Body1} body The model configuration
+     * @param {String} mid The model id that needs to be edited
+     * @param {module:model/Body} body The model configuration
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.editModel = function(sid, body) {
-      return this.editModelWithHttpInfo(sid, body)
+    this.editModel = function(mid, body) {
+      return this.editModelWithHttpInfo(mid, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Edit a trained model
+     * Edit or update an existing training
+     * @param {String} mid The model id
+     * @param {String} trid The train id that needs to be edited
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     */
+    this.editModelTrainWithHttpInfo = function(mid, trid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling editModelTrain");
+      }
+
+      // verify the required parameter 'trid' is set
+      if (trid === undefined || trid === null) {
+        throw new Error("Missing the required parameter 'trid' when calling editModelTrain");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'trid': trid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/model/{mid}/train/{trid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Edit a trained model
+     * Edit or update an existing training
+     * @param {String} mid The model id
+     * @param {String} trid The train id that needs to be edited
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     */
+    this.editModelTrain = function(mid, trid) {
+      return this.editModelTrainWithHttpInfo(mid, trid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -411,16 +529,16 @@
     /**
      * Edit a model
      * Edit an existing model
-     * @param {String} sid The model id that needs to be edited
-     * @param {module:model/Body3} body The model configuration
+     * @param {String} mid The model id that needs to be edited
+     * @param {module:model/Body1} body The model configuration
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
      */
-    this.editModel_0WithHttpInfo = function(sid, body) {
+    this.editModel_0WithHttpInfo = function(mid, body) {
       var postBody = body;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling editModel_0");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling editModel_0");
       }
 
       // verify the required parameter 'body' is set
@@ -430,7 +548,7 @@
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -445,7 +563,7 @@
       var returnType = 'String';
 
       return this.apiClient.callApi(
-        '/service/{sid}', 'PUT',
+        '/service/{mid}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -454,12 +572,114 @@
     /**
      * Edit a model
      * Edit an existing model
-     * @param {String} sid The model id that needs to be edited
-     * @param {module:model/Body3} body The model configuration
+     * @param {String} mid The model id that needs to be edited
+     * @param {module:model/Body1} body The model configuration
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
      */
-    this.editModel_0 = function(sid, body) {
-      return this.editModel_0WithHttpInfo(sid, body)
+    this.editModel_0 = function(mid, body) {
+      return this.editModel_0WithHttpInfo(mid, body)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Fit the model
+     * Fit the model with the data
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.fitModelTrainWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling fitModelTrain");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/train', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Fit the model
+     * Fit the model with the data
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.fitModelTrain = function(mid) {
+      return this.fitModelTrainWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List out trained models
+     * List out all the trained models
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.listModelTrainWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling listModelTrain");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/train', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List out trained models
+     * List out all the trained models
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.listModelTrain = function(mid) {
+      return this.listModelTrainWithHttpInfo(mid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -555,20 +775,20 @@
     /**
      * Run a model
      * Run an existing model
-     * @param {String} sid The model id to run
+     * @param {String} mid The model id to run
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.runModelWithHttpInfo = function(sid) {
+    this.runModelWithHttpInfo = function(mid) {
       var postBody = null;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling runModel");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling runModel");
       }
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -583,7 +803,7 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/model/{sid}', 'POST',
+        '/model/{mid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -592,11 +812,70 @@
     /**
      * Run a model
      * Run an existing model
-     * @param {String} sid The model id to run
+     * @param {String} mid The model id to run
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.runModel = function(sid) {
-      return this.runModelWithHttpInfo(sid)
+    this.runModel = function(mid) {
+      return this.runModelWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Run a training
+     * Run an specific training
+     * @param {String} mid The model id to train
+     * @param {String} trid The training id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    this.runModelTrainWithHttpInfo = function(mid, trid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling runModelTrain");
+      }
+
+      // verify the required parameter 'trid' is set
+      if (trid === undefined || trid === null) {
+        throw new Error("Missing the required parameter 'trid' when calling runModelTrain");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'trid': trid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = Object;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/train/{trid}', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Run a training
+     * Run an specific training
+     * @param {String} mid The model id to train
+     * @param {String} trid The training id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    this.runModelTrain = function(mid, trid) {
+      return this.runModelTrainWithHttpInfo(mid, trid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -606,20 +885,20 @@
     /**
      * Run a model
      * Run an existing model
-     * @param {String} sid The model id to run
+     * @param {String} mid The model id to run
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.runModel_0WithHttpInfo = function(sid) {
+    this.runModel_0WithHttpInfo = function(mid) {
       var postBody = null;
 
-      // verify the required parameter 'sid' is set
-      if (sid === undefined || sid === null) {
-        throw new Error("Missing the required parameter 'sid' when calling runModel_0");
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling runModel_0");
       }
 
 
       var pathParams = {
-        'sid': sid
+        'mid': mid
       };
       var queryParams = {
       };
@@ -634,7 +913,7 @@
       var returnType = Object;
 
       return this.apiClient.callApi(
-        '/service/{sid}', 'POST',
+        '/service/{mid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
@@ -643,11 +922,11 @@
     /**
      * Run a model
      * Run an existing model
-     * @param {String} sid The model id to run
+     * @param {String} mid The model id to run
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.runModel_0 = function(sid) {
-      return this.runModel_0WithHttpInfo(sid)
+    this.runModel_0 = function(mid) {
+      return this.runModel_0WithHttpInfo(mid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

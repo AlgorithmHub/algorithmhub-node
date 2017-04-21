@@ -34,25 +34,20 @@
   /**
    * The InlineResponse200 model module.
    * @module model/InlineResponse200
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
    * Constructs a new <code>InlineResponse200</code>.
    * @alias module:model/InlineResponse200
    * @class
-   * @param wsid {String} 
-   * @param inputs {Object} 
-   * @param f {String} 
-   * @param outputs {Array.<String>} 
    */
-  var exports = function(wsid, inputs, f, outputs) {
+  var exports = function() {
     var _this = this;
 
-    _this['wsid'] = wsid;
-    _this['inputs'] = inputs;
-    _this['f'] = f;
-    _this['outputs'] = outputs;
+
+
+
 
   };
 
@@ -67,45 +62,39 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('wsid')) {
-        obj['wsid'] = ApiClient.convertToType(data['wsid'], 'String');
+      if (data.hasOwnProperty('mid')) {
+        obj['mid'] = ApiClient.convertToType(data['mid'], 'String');
       }
-      if (data.hasOwnProperty('inputs')) {
-        obj['inputs'] = ApiClient.convertToType(data['inputs'], Object);
-      }
-      if (data.hasOwnProperty('f')) {
-        obj['f'] = ApiClient.convertToType(data['f'], 'String');
-      }
-      if (data.hasOwnProperty('outputs')) {
-        obj['outputs'] = ApiClient.convertToType(data['outputs'], ['String']);
+      if (data.hasOwnProperty('runCount')) {
+        obj['runCount'] = ApiClient.convertToType(data['runCount'], 'String');
       }
       if (data.hasOwnProperty('isPublic')) {
         obj['isPublic'] = ApiClient.convertToType(data['isPublic'], 'Boolean');
+      }
+      if (data.hasOwnProperty('timeCreated')) {
+        obj['timeCreated'] = ApiClient.convertToType(data['timeCreated'], 'Date');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} wsid
+   * @member {String} mid
    */
-  exports.prototype['wsid'] = undefined;
+  exports.prototype['mid'] = undefined;
   /**
-   * @member {Object} inputs
+   * @member {String} runCount
    */
-  exports.prototype['inputs'] = undefined;
-  /**
-   * @member {String} f
-   */
-  exports.prototype['f'] = undefined;
-  /**
-   * @member {Array.<String>} outputs
-   */
-  exports.prototype['outputs'] = undefined;
+  exports.prototype['runCount'] = undefined;
   /**
    * @member {Boolean} isPublic
+   * @default false
    */
-  exports.prototype['isPublic'] = undefined;
+  exports.prototype['isPublic'] = false;
+  /**
+   * @member {Date} timeCreated
+   */
+  exports.prototype['timeCreated'] = undefined;
 
 
 

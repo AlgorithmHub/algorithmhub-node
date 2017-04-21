@@ -14,18 +14,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2007Files'], factory);
+    define(['ApiClient'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('./InlineResponse2007Files'));
+    module.exports = factory(require('../ApiClient'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.InlineResponse2007 = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse2007Files);
+    root.algorithmhub.InlineResponse2007 = factory(root.algorithmhub.ApiClient);
   }
-}(this, function(ApiClient, InlineResponse2007Files) {
+}(this, function(ApiClient) {
   'use strict';
 
 
@@ -34,20 +34,20 @@
   /**
    * The InlineResponse2007 model module.
    * @module model/InlineResponse2007
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
    * Constructs a new <code>InlineResponse2007</code>.
    * @alias module:model/InlineResponse2007
    * @class
-   * @param files {Array.<module:model/InlineResponse2007Files>} 
    */
-  var exports = function(files) {
+  var exports = function() {
     var _this = this;
 
 
-    _this['files'] = files;
+
+
   };
 
   /**
@@ -61,24 +61,31 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('path')) {
-        obj['path'] = ApiClient.convertToType(data['path'], 'String');
+      if (data.hasOwnProperty('fdrtab')) {
+        obj['fdrtab'] = ApiClient.convertToType(data['fdrtab'], Object);
       }
-      if (data.hasOwnProperty('files')) {
-        obj['files'] = ApiClient.convertToType(data['files'], [InlineResponse2007Files]);
+      if (data.hasOwnProperty('OptimalPlot')) {
+        obj['OptimalPlot'] = ApiClient.convertToType(data['OptimalPlot'], 'String');
+      }
+      if (data.hasOwnProperty('_rid')) {
+        obj['_rid'] = ApiClient.convertToType(data['_rid'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} path
+   * @member {Object} fdrtab
    */
-  exports.prototype['path'] = undefined;
+  exports.prototype['fdrtab'] = undefined;
   /**
-   * @member {Array.<module:model/InlineResponse2007Files>} files
+   * @member {String} OptimalPlot
    */
-  exports.prototype['files'] = undefined;
+  exports.prototype['OptimalPlot'] = undefined;
+  /**
+   * @member {String} _rid
+   */
+  exports.prototype['_rid'] = undefined;
 
 
 

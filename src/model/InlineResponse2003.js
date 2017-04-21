@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2003 model module.
    * @module model/InlineResponse2003
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -65,8 +65,8 @@
       if (data.hasOwnProperty('name')) {
         obj['name'] = ApiClient.convertToType(data['name'], 'String');
       }
-      if (data.hasOwnProperty('wsid')) {
-        obj['wsid'] = ApiClient.convertToType(data['wsid'], 'String');
+      if (data.hasOwnProperty('mid')) {
+        obj['mid'] = ApiClient.convertToType(data['mid'], 'String');
       }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -83,9 +83,9 @@
    */
   exports.prototype['name'] = undefined;
   /**
-   * @member {String} wsid
+   * @member {String} mid
    */
-  exports.prototype['wsid'] = undefined;
+  exports.prototype['mid'] = undefined;
   /**
    * @member {String} type
    */

@@ -1,8 +1,8 @@
-# algorithmhub.Body4
+# algorithmhub.InlineResponse20017
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wstype** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
 
 

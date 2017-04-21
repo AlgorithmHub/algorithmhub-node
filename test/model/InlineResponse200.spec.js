@@ -54,32 +54,26 @@
       //expect(instance).to.be.a(algorithmhub.InlineResponse200);
     });
 
-    it('should have the property wsid (base name: "wsid")', function() {
-      // uncomment below and update the code to test the property wsid
+    it('should have the property mid (base name: "mid")', function() {
+      // uncomment below and update the code to test the property mid
       //var instane = new algorithmhub.InlineResponse200();
       //expect(instance).to.be();
     });
 
-    it('should have the property inputs (base name: "inputs")', function() {
-      // uncomment below and update the code to test the property inputs
-      //var instane = new algorithmhub.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property f (base name: "f")', function() {
-      // uncomment below and update the code to test the property f
-      //var instane = new algorithmhub.InlineResponse200();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property outputs (base name: "outputs")', function() {
-      // uncomment below and update the code to test the property outputs
+    it('should have the property runCount (base name: "runCount")', function() {
+      // uncomment below and update the code to test the property runCount
       //var instane = new algorithmhub.InlineResponse200();
       //expect(instance).to.be();
     });
 
     it('should have the property isPublic (base name: "isPublic")', function() {
       // uncomment below and update the code to test the property isPublic
+      //var instane = new algorithmhub.InlineResponse200();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property timeCreated (base name: "timeCreated")', function() {
+      // uncomment below and update the code to test the property timeCreated
       //var instane = new algorithmhub.InlineResponse200();
       //expect(instance).to.be();
     });

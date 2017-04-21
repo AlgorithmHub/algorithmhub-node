@@ -3,9 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**sid** | **String** |  | [optional] 
-**type** | **String** |  | [optional] 
-**timeCreated** | **Date** |  | [optional] 
+**rid** | **String** |  | [optional] 
 
 

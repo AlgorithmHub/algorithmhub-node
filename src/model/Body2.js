@@ -34,25 +34,17 @@
   /**
    * The Body2 model module.
    * @module model/Body2
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
    * Constructs a new <code>Body2</code>.
    * @alias module:model/Body2
    * @class
-   * @param wsid {String} 
-   * @param inputs {Object} 
-   * @param f {String} 
-   * @param outputs {Array.<String>} 
    */
-  var exports = function(wsid, inputs, f, outputs) {
+  var exports = function() {
     var _this = this;
 
-    _this['wsid'] = wsid;
-    _this['inputs'] = inputs;
-    _this['f'] = f;
-    _this['outputs'] = outputs;
 
   };
 
@@ -67,45 +59,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('wsid')) {
-        obj['wsid'] = ApiClient.convertToType(data['wsid'], 'String');
-      }
-      if (data.hasOwnProperty('inputs')) {
-        obj['inputs'] = ApiClient.convertToType(data['inputs'], Object);
-      }
-      if (data.hasOwnProperty('f')) {
-        obj['f'] = ApiClient.convertToType(data['f'], 'String');
-      }
-      if (data.hasOwnProperty('outputs')) {
-        obj['outputs'] = ApiClient.convertToType(data['outputs'], ['String']);
-      }
-      if (data.hasOwnProperty('isPublic')) {
-        obj['isPublic'] = ApiClient.convertToType(data['isPublic'], 'Boolean');
+      if (data.hasOwnProperty('wstype')) {
+        obj['wstype'] = ApiClient.convertToType(data['wstype'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} wsid
+   * @member {String} wstype
    */
-  exports.prototype['wsid'] = undefined;
-  /**
-   * @member {Object} inputs
-   */
-  exports.prototype['inputs'] = undefined;
-  /**
-   * @member {String} f
-   */
-  exports.prototype['f'] = undefined;
-  /**
-   * @member {Array.<String>} outputs
-   */
-  exports.prototype['outputs'] = undefined;
-  /**
-   * @member {Boolean} isPublic
-   */
-  exports.prototype['isPublic'] = undefined;
+  exports.prototype['wstype'] = undefined;
 
 
 

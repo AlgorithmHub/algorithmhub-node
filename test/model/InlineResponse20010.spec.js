@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new algorithmhub.Body4();
+    instance = new algorithmhub.InlineResponse20010();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,16 +47,16 @@
       object[property] = value;
   }
 
-  describe('Body4', function() {
-    it('should create an instance of Body4', function() {
-      // uncomment below and update the code to test Body4
-      //var instane = new algorithmhub.Body4();
-      //expect(instance).to.be.a(algorithmhub.Body4);
+  describe('InlineResponse20010', function() {
+    it('should create an instance of InlineResponse20010', function() {
+      // uncomment below and update the code to test InlineResponse20010
+      //var instane = new algorithmhub.InlineResponse20010();
+      //expect(instance).to.be.a(algorithmhub.InlineResponse20010);
     });
 
-    it('should have the property wstype (base name: "wstype")', function() {
-      // uncomment below and update the code to test the property wstype
-      //var instane = new algorithmhub.Body4();
+    it('should have the property files (base name: "files")', function() {
+      // uncomment below and update the code to test the property files
+      //var instane = new algorithmhub.InlineResponse20010();
       //expect(instance).to.be();
     });
 

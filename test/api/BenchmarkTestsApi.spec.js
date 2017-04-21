@@ -48,6 +48,56 @@
   }
 
   describe('BenchmarkTestsApi', function() {
+    describe('createBenchmark', function() {
+      it('should call createBenchmark successfully', function(done) {
+        //uncomment below and update the code to test createBenchmark
+        //instance.createBenchmark(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('deleteBenchmark', function() {
+      it('should call deleteBenchmark successfully', function(done) {
+        //uncomment below and update the code to test deleteBenchmark
+        //instance.deleteBenchmark(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('listBenchmark', function() {
+      it('should call listBenchmark successfully', function(done) {
+        //uncomment below and update the code to test listBenchmark
+        //instance.listBenchmark(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('runBenchmark', function() {
+      it('should call runBenchmark successfully', function(done) {
+        //uncomment below and update the code to test runBenchmark
+        //instance.runBenchmark(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateBenchmark', function() {
+      it('should call updateBenchmark successfully', function(done) {
+        //uncomment below and update the code to test updateBenchmark
+        //instance.updateBenchmark(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('validateBenchmark', function() {
       it('should call validateBenchmark successfully', function(done) {
         //uncomment below and update the code to test validateBenchmark

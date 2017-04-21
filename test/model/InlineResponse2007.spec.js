@@ -54,14 +54,20 @@
       //expect(instance).to.be.a(algorithmhub.InlineResponse2007);
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
+    it('should have the property fdrtab (base name: "fdrtab")', function() {
+      // uncomment below and update the code to test the property fdrtab
       //var instane = new algorithmhub.InlineResponse2007();
       //expect(instance).to.be();
     });
 
-    it('should have the property files (base name: "files")', function() {
-      // uncomment below and update the code to test the property files
+    it('should have the property optimalPlot (base name: "OptimalPlot")', function() {
+      // uncomment below and update the code to test the property optimalPlot
+      //var instane = new algorithmhub.InlineResponse2007();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property rid (base name: "_rid")', function() {
+      // uncomment below and update the code to test the property rid
       //var instane = new algorithmhub.InlineResponse2007();
       //expect(instance).to.be();
     });

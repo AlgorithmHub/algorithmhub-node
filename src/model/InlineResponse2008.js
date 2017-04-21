@@ -23,7 +23,7 @@
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.Body4 = factory(root.algorithmhub.ApiClient);
+    root.algorithmhub.InlineResponse2008 = factory(root.algorithmhub.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -32,44 +32,52 @@
 
 
   /**
-   * The Body4 model module.
-   * @module model/Body4
-   * @version 0.2.3
+   * The InlineResponse2008 model module.
+   * @module model/InlineResponse2008
+   * @version 0.2.4
    */
 
   /**
-   * Constructs a new <code>Body4</code>.
-   * @alias module:model/Body4
+   * Constructs a new <code>InlineResponse2008</code>.
+   * @alias module:model/InlineResponse2008
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
+
   };
 
   /**
-   * Constructs a <code>Body4</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InlineResponse2008</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Body4} obj Optional instance to populate.
-   * @return {module:model/Body4} The populated <code>Body4</code> instance.
+   * @param {module:model/InlineResponse2008} obj Optional instance to populate.
+   * @return {module:model/InlineResponse2008} The populated <code>InlineResponse2008</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('wstype')) {
-        obj['wstype'] = ApiClient.convertToType(data['wstype'], 'String');
+      if (data.hasOwnProperty('files')) {
+        obj['files'] = ApiClient.convertToType(data['files'], Object);
+      }
+      if (data.hasOwnProperty('mimes')) {
+        obj['mimes'] = ApiClient.convertToType(data['mimes'], Object);
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} wstype
+   * @member {Object} files
    */
-  exports.prototype['wstype'] = undefined;
+  exports.prototype['files'] = undefined;
+  /**
+   * @member {Object} mimes
+   */
+  exports.prototype['mimes'] = undefined;
 
 
 

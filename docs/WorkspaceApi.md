@@ -4,22 +4,22 @@ All URIs are relative to *http://localhost:10010/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cloneWorkspace**](WorkspaceApi.md#cloneWorkspace) | **POST** /workspace/{wsid}/clone | Clone the workspace
+[**cloneWorkspace**](WorkspaceApi.md#cloneWorkspace) | **POST** /workspace/{wmid}/clone | Clone the workspace
 [**createWorkspace**](WorkspaceApi.md#createWorkspace) | **POST** /workspace | Creates new workspace
-[**deleteWorkspace**](WorkspaceApi.md#deleteWorkspace) | **DELETE** /workspace/{wsid} | Delete an existing workspace
-[**detailWorkspace**](WorkspaceApi.md#detailWorkspace) | **GET** /workspace/{wsid} | Gets workspace metadata
-[**listServices**](WorkspaceApi.md#listServices) | **GET** /workspace/{wsid}/model | Get models associated
-[**listServices_0**](WorkspaceApi.md#listServices_0) | **GET** /workspace/{wsid}/service | Get models associated
+[**deleteWorkspace**](WorkspaceApi.md#deleteWorkspace) | **DELETE** /workspace/{wmid} | Delete an existing workspace
+[**detailWorkspace**](WorkspaceApi.md#detailWorkspace) | **GET** /workspace/{wmid} | Gets workspace metadata
+[**listServices**](WorkspaceApi.md#listServices) | **GET** /workspace/{wmid}/model | Get models associated
+[**listServices_0**](WorkspaceApi.md#listServices_0) | **GET** /workspace/{wmid}/service | Get models associated
 [**listWorkspaces**](WorkspaceApi.md#listWorkspaces) | **GET** /workspace | Returns list of workspaces
-[**publishWorkspace**](WorkspaceApi.md#publishWorkspace) | **POST** /workspace/{wsid}/publish | Publish workspace to repo
-[**shareWorkspace**](WorkspaceApi.md#shareWorkspace) | **POST** /workspace/{wsid}/share | Share workspace with another user
-[**turnOffWorkspace**](WorkspaceApi.md#turnOffWorkspace) | **POST** /workspace/{wsid}/off | Turn off the workspace
-[**turnOnWorkspace**](WorkspaceApi.md#turnOnWorkspace) | **POST** /workspace/{wsid}/on | Turn on the workspace
+[**publishWorkspace**](WorkspaceApi.md#publishWorkspace) | **POST** /workspace/{wmid}/publish | Publish workspace to repo
+[**shareWorkspace**](WorkspaceApi.md#shareWorkspace) | **POST** /workspace/{wmid}/share | Share workspace with another user
+[**turnOffWorkspace**](WorkspaceApi.md#turnOffWorkspace) | **POST** /workspace/{wmid}/off | Turn off the workspace
+[**turnOnWorkspace**](WorkspaceApi.md#turnOnWorkspace) | **POST** /workspace/{wmid}/on | Turn on the workspace
 
 
 <a name="cloneWorkspace"></a>
 # **cloneWorkspace**
-> &#39;String&#39; cloneWorkspace(wsid)
+> &#39;String&#39; cloneWorkspace(wmid)
 
 Clone the workspace
 
@@ -31,9 +31,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.cloneWorkspace(wsid).then(function(data) {
+apiInstance.cloneWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -45,7 +45,7 @@ apiInstance.cloneWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 
@@ -74,7 +74,7 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var body = new algorithmhub.Body4(); // Body4 | The workspace type
+var body = new algorithmhub.Body2(); // Body2 | The workspace type
 
 apiInstance.createWorkspace(body).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -88,7 +88,7 @@ apiInstance.createWorkspace(body).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body4**](Body4.md)| The workspace type | 
+ **body** | [**Body2**](Body2.md)| The workspace type | 
 
 ### Return type
 
@@ -105,7 +105,7 @@ No authorization required
 
 <a name="deleteWorkspace"></a>
 # **deleteWorkspace**
-> &#39;String&#39; deleteWorkspace(wsid)
+> &#39;String&#39; deleteWorkspace(wmid)
 
 Delete an existing workspace
 
@@ -117,9 +117,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace id
+var wmid = "wmid_example"; // String | The workspace id
 
-apiInstance.deleteWorkspace(wsid).then(function(data) {
+apiInstance.deleteWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -131,7 +131,7 @@ apiInstance.deleteWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace id | 
+ **wmid** | **String**| The workspace id | 
 
 ### Return type
 
@@ -148,7 +148,7 @@ No authorization required
 
 <a name="detailWorkspace"></a>
 # **detailWorkspace**
-> InlineResponse2003 detailWorkspace(wsid)
+> InlineResponse20011 detailWorkspace(wmid)
 
 Gets workspace metadata
 
@@ -160,9 +160,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace id
+var wmid = "wmid_example"; // String | The workspace id
 
-apiInstance.detailWorkspace(wsid).then(function(data) {
+apiInstance.detailWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -174,11 +174,11 @@ apiInstance.detailWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace id | 
+ **wmid** | **String**| The workspace id | 
 
 ### Return type
 
-[**InlineResponse2003**](InlineResponse2003.md)
+[**InlineResponse20011**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ No authorization required
 
 <a name="listServices"></a>
 # **listServices**
-> [InlineResponse2004] listServices(wsid)
+> [InlineResponse20012] listServices(wmid)
 
 Get models associated
 
@@ -203,9 +203,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.listServices(wsid).then(function(data) {
+apiInstance.listServices(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -217,11 +217,11 @@ apiInstance.listServices(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[InlineResponse20012]**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ No authorization required
 
 <a name="listServices_0"></a>
 # **listServices_0**
-> [InlineResponse2004] listServices_0(wsid)
+> [InlineResponse20012] listServices_0(wmid)
 
 Get models associated
 
@@ -246,9 +246,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.listServices_0(wsid).then(function(data) {
+apiInstance.listServices_0(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -260,11 +260,11 @@ apiInstance.listServices_0(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 
-[**[InlineResponse2004]**](InlineResponse2004.md)
+[**[InlineResponse20012]**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ No authorization required
 
 <a name="listWorkspaces"></a>
 # **listWorkspaces**
-> [InlineResponse2003] listWorkspaces()
+> [InlineResponse20011] listWorkspaces()
 
 Returns list of workspaces
 
@@ -301,7 +301,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[InlineResponse2003]**](InlineResponse2003.md)
+[**[InlineResponse20011]**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ No authorization required
 
 <a name="publishWorkspace"></a>
 # **publishWorkspace**
-> &#39;String&#39; publishWorkspace(wsid)
+> &#39;String&#39; publishWorkspace(wmid)
 
 Publish workspace to repo
 
@@ -326,9 +326,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.publishWorkspace(wsid).then(function(data) {
+apiInstance.publishWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -340,7 +340,7 @@ apiInstance.publishWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ No authorization required
 
 <a name="shareWorkspace"></a>
 # **shareWorkspace**
-> &#39;String&#39; shareWorkspace(wsid)
+> &#39;String&#39; shareWorkspace(wmid)
 
 Share workspace with another user
 
@@ -369,9 +369,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.shareWorkspace(wsid).then(function(data) {
+apiInstance.shareWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -383,7 +383,7 @@ apiInstance.shareWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 
@@ -400,7 +400,7 @@ No authorization required
 
 <a name="turnOffWorkspace"></a>
 # **turnOffWorkspace**
-> &#39;String&#39; turnOffWorkspace(wsid)
+> &#39;String&#39; turnOffWorkspace(wmid)
 
 Turn off the workspace
 
@@ -412,9 +412,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.turnOffWorkspace(wsid).then(function(data) {
+apiInstance.turnOffWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -426,7 +426,7 @@ apiInstance.turnOffWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 
@@ -443,7 +443,7 @@ No authorization required
 
 <a name="turnOnWorkspace"></a>
 # **turnOnWorkspace**
-> &#39;String&#39; turnOnWorkspace(wsid)
+> &#39;String&#39; turnOnWorkspace(wmid)
 
 Turn on the workspace
 
@@ -455,9 +455,9 @@ var algorithmhub = require('algorithmhub');
 
 var apiInstance = new algorithmhub.WorkspaceApi();
 
-var wsid = "wsid_example"; // String | The workspace base type.
+var wmid = "wmid_example"; // String | The workspace base type.
 
-apiInstance.turnOnWorkspace(wsid).then(function(data) {
+apiInstance.turnOnWorkspace(wmid).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -469,7 +469,7 @@ apiInstance.turnOnWorkspace(wsid).then(function(data) {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wsid** | **String**| The workspace base type. | 
+ **wmid** | **String**| The workspace base type. | 
 
 ### Return type
 

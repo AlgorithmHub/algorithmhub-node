@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**f** | **String** |  | [optional] 
+**outputs** | **String** |  | [optional] 
 
 

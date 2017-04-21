@@ -3,10 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**wsid** | **String** |  | 
-**inputs** | **Object** |  | 
-**f** | **String** |  | 
-**outputs** | **[String]** |  | 
-**isPublic** | **Boolean** |  | [optional] 
+**mid** | **String** |  | [optional] 
+**runCount** | **String** |  | [optional] 
+**isPublic** | **Boolean** |  | [optional] [default to false]
+**timeCreated** | **Date** |  | [optional] 
 
 

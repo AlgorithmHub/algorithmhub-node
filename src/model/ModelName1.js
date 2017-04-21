@@ -23,7 +23,7 @@
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.Body3 = factory(root.algorithmhub.ApiClient);
+    root.algorithmhub.ModelName1 = factory(root.algorithmhub.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -32,14 +32,14 @@
 
 
   /**
-   * The Body3 model module.
-   * @module model/Body3
-   * @version 0.2.3
+   * The ModelName1 model module.
+   * @module model/ModelName1
+   * @version 0.2.4
    */
 
   /**
-   * Constructs a new <code>Body3</code>.
-   * @alias module:model/Body3
+   * Constructs a new <code>ModelName1</code>.
+   * @alias module:model/ModelName1
    * @class
    * @param wsid {String} 
    * @param inputs {Object} 
@@ -57,11 +57,11 @@
   };
 
   /**
-   * Constructs a <code>Body3</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>ModelName1</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/Body3} obj Optional instance to populate.
-   * @return {module:model/Body3} The populated <code>Body3</code> instance.
+   * @param {module:model/ModelName1} obj Optional instance to populate.
+   * @return {module:model/ModelName1} The populated <code>ModelName1</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {

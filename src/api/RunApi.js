@@ -14,24 +14,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2002', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/InlineResponse20010', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/InlineResponseDefault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2002'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse20010'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/InlineResponse2006'), require('../model/InlineResponse2007'), require('../model/InlineResponse2008'), require('../model/InlineResponse2009'), require('../model/InlineResponseDefault'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.RunApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse2002, root.algorithmhub.InlineResponseDefault);
+    root.algorithmhub.RunApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse20010, root.algorithmhub.InlineResponse2004, root.algorithmhub.InlineResponse2005, root.algorithmhub.InlineResponse2006, root.algorithmhub.InlineResponse2007, root.algorithmhub.InlineResponse2008, root.algorithmhub.InlineResponse2009, root.algorithmhub.InlineResponseDefault);
   }
-}(this, function(ApiClient, InlineResponse2002, InlineResponseDefault) {
+}(this, function(ApiClient, InlineResponse20010, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, InlineResponseDefault) {
   'use strict';
 
   /**
    * Run service.
    * @module api/RunApi
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -101,7 +101,7 @@
      * Get info about run
      * Get info about the run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     this.detailRunWithHttpInfo = function(rid) {
       var postBody = null;
@@ -125,7 +125,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2002;
+      var returnType = InlineResponse2005;
 
       return this.apiClient.callApi(
         '/run/{rid}', 'GET',
@@ -138,7 +138,7 @@
      * Get info about run
      * Get info about the run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     this.detailRun = function(rid) {
       return this.detailRunWithHttpInfo(rid)
@@ -152,7 +152,7 @@
      * Input parameters
      * Input parameters
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
     this.getInputWithHttpInfo = function(rid) {
       var postBody = null;
@@ -176,7 +176,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = Object;
+      var returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
         '/run/{rid}/input', 'GET',
@@ -189,7 +189,7 @@
      * Input parameters
      * Input parameters
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */
     this.getInput = function(rid) {
       return this.getInputWithHttpInfo(rid)
@@ -203,7 +203,7 @@
      * Get the output
      * Get the output
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
      */
     this.getOutputWithHttpInfo = function(rid) {
       var postBody = null;
@@ -227,7 +227,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = Object;
+      var returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
         '/run/{rid}/output', 'GET',
@@ -240,7 +240,7 @@
      * Get the output
      * Get the output
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
      */
     this.getOutput = function(rid) {
       return this.getOutputWithHttpInfo(rid)
@@ -314,7 +314,7 @@
      * Get a file
      * @param {String} rid The run id
      * @param {String} filename The filename
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
      */
     this.getOutputFileWithHttpInfo = function(rid, filename) {
       var postBody = null;
@@ -344,7 +344,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = File;
+      var returnType = InlineResponse2009;
 
       return this.apiClient.callApi(
         '/run/{rid}/file/{filename}', 'GET',
@@ -358,7 +358,7 @@
      * Get a file
      * @param {String} rid The run id
      * @param {String} filename The filename
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
      */
     this.getOutputFile = function(rid, filename) {
       return this.getOutputFileWithHttpInfo(rid, filename)
@@ -423,7 +423,7 @@
      * Get list of figures
      * Get list of figures
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20010} and HTTP response
      */
     this.listOutputFiguresWithHttpInfo = function(rid) {
       var postBody = null;
@@ -447,7 +447,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = 'String';
+      var returnType = InlineResponse20010;
 
       return this.apiClient.callApi(
         '/run/{rid}/figures', 'GET',
@@ -460,7 +460,7 @@
      * Get list of figures
      * Get list of figures
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20010}
      */
     this.listOutputFigures = function(rid) {
       return this.listOutputFiguresWithHttpInfo(rid)
@@ -474,7 +474,7 @@
      * Get list of output files
      * Get list of output files
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link 'String'} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
      */
     this.listOutputFilesWithHttpInfo = function(rid) {
       var postBody = null;
@@ -498,7 +498,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = 'String';
+      var returnType = InlineResponse2008;
 
       return this.apiClient.callApi(
         '/run/{rid}/files', 'GET',
@@ -511,7 +511,7 @@
      * Get list of output files
      * Get list of output files
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link 'String'}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
      */
     this.listOutputFiles = function(rid) {
       return this.listOutputFilesWithHttpInfo(rid)
@@ -524,7 +524,7 @@
     /**
      * Get list of runs
      * Get list of runs
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Object>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     this.listRunsWithHttpInfo = function() {
       var postBody = null;
@@ -542,7 +542,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = [Object];
+      var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
         '/run', 'GET',
@@ -554,7 +554,7 @@
     /**
      * Get list of runs
      * Get list of runs
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Object>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     this.listRuns = function() {
       return this.listRunsWithHttpInfo()

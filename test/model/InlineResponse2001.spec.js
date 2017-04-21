@@ -54,26 +54,8 @@
       //expect(instance).to.be.a(algorithmhub.InlineResponse2001);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new algorithmhub.InlineResponse2001();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property sid (base name: "sid")', function() {
-      // uncomment below and update the code to test the property sid
-      //var instane = new algorithmhub.InlineResponse2001();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
-      //var instane = new algorithmhub.InlineResponse2001();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property timeCreated (base name: "timeCreated")', function() {
-      // uncomment below and update the code to test the property timeCreated
+    it('should have the property rid (base name: "rid")', function() {
+      // uncomment below and update the code to test the property rid
       //var instane = new algorithmhub.InlineResponse2001();
       //expect(instance).to.be();
     });

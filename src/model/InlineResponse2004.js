@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2004 model module.
    * @module model/InlineResponse2004
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -44,8 +44,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
 
@@ -64,20 +62,14 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('mid')) {
+        obj['mid'] = ApiClient.convertToType(data['mid'], 'String');
       }
-      if (data.hasOwnProperty('sid')) {
-        obj['sid'] = ApiClient.convertToType(data['sid'], 'String');
+      if (data.hasOwnProperty('rid')) {
+        obj['rid'] = ApiClient.convertToType(data['rid'], 'String');
       }
-      if (data.hasOwnProperty('tags')) {
-        obj['tags'] = ApiClient.convertToType(data['tags'], ['String']);
-      }
-      if (data.hasOwnProperty('runCount')) {
-        obj['runCount'] = ApiClient.convertToType(data['runCount'], 'Number');
-      }
-      if (data.hasOwnProperty('isPublic')) {
-        obj['isPublic'] = ApiClient.convertToType(data['isPublic'], 'Boolean');
+      if (data.hasOwnProperty('owner')) {
+        obj['owner'] = ApiClient.convertToType(data['owner'], 'String');
       }
       if (data.hasOwnProperty('timeCreated')) {
         obj['timeCreated'] = ApiClient.convertToType(data['timeCreated'], 'Date');
@@ -87,25 +79,17 @@
   }
 
   /**
-   * @member {String} name
+   * @member {String} mid
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['mid'] = undefined;
   /**
-   * @member {String} sid
+   * @member {String} rid
    */
-  exports.prototype['sid'] = undefined;
+  exports.prototype['rid'] = undefined;
   /**
-   * @member {Array.<String>} tags
+   * @member {String} owner
    */
-  exports.prototype['tags'] = undefined;
-  /**
-   * @member {Number} runCount
-   */
-  exports.prototype['runCount'] = undefined;
-  /**
-   * @member {Boolean} isPublic
-   */
-  exports.prototype['isPublic'] = undefined;
+  exports.prototype['owner'] = undefined;
   /**
    * @member {Date} timeCreated
    */

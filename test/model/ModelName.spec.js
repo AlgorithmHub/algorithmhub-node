@@ -28,7 +28,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new algorithmhub.InlineResponse2007Files();
+    instance = new algorithmhub.ModelName();
   });
 
   var getProperty = function(object, getter, property) {
@@ -47,40 +47,40 @@
       object[property] = value;
   }
 
-  describe('InlineResponse2007Files', function() {
-    it('should create an instance of InlineResponse2007Files', function() {
-      // uncomment below and update the code to test InlineResponse2007Files
-      //var instane = new algorithmhub.InlineResponse2007Files();
-      //expect(instance).to.be.a(algorithmhub.InlineResponse2007Files);
+  describe('ModelName', function() {
+    it('should create an instance of ModelName', function() {
+      // uncomment below and update the code to test ModelName
+      //var instane = new algorithmhub.ModelName();
+      //expect(instance).to.be.a(algorithmhub.ModelName);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instane = new algorithmhub.InlineResponse2007Files();
+    it('should have the property wsid (base name: "wsid")', function() {
+      // uncomment below and update the code to test the property wsid
+      //var instane = new algorithmhub.ModelName();
       //expect(instance).to.be();
     });
 
-    it('should have the property path (base name: "path")', function() {
-      // uncomment below and update the code to test the property path
-      //var instane = new algorithmhub.InlineResponse2007Files();
+    it('should have the property inputs (base name: "inputs")', function() {
+      // uncomment below and update the code to test the property inputs
+      //var instane = new algorithmhub.ModelName();
       //expect(instance).to.be();
     });
 
-    it('should have the property size (base name: "size")', function() {
-      // uncomment below and update the code to test the property size
-      //var instane = new algorithmhub.InlineResponse2007Files();
+    it('should have the property f (base name: "f")', function() {
+      // uncomment below and update the code to test the property f
+      //var instane = new algorithmhub.ModelName();
       //expect(instance).to.be();
     });
 
-    it('should have the property time (base name: "time")', function() {
-      // uncomment below and update the code to test the property time
-      //var instane = new algorithmhub.InlineResponse2007Files();
+    it('should have the property outputs (base name: "outputs")', function() {
+      // uncomment below and update the code to test the property outputs
+      //var instane = new algorithmhub.ModelName();
       //expect(instance).to.be();
     });
 
-    it('should have the property isdir (base name: "isdir")', function() {
-      // uncomment below and update the code to test the property isdir
-      //var instane = new algorithmhub.InlineResponse2007Files();
+    it('should have the property isPublic (base name: "isPublic")', function() {
+      // uncomment below and update the code to test the property isPublic
+      //var instane = new algorithmhub.ModelName();
       //expect(instance).to.be();
     });
 

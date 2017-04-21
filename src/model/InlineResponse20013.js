@@ -23,7 +23,7 @@
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.InlineResponse2007Files = factory(root.algorithmhub.ApiClient);
+    root.algorithmhub.InlineResponse20013 = factory(root.algorithmhub.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -32,14 +32,14 @@
 
 
   /**
-   * The InlineResponse2007Files model module.
-   * @module model/InlineResponse2007Files
-   * @version 0.2.3
+   * The InlineResponse20013 model module.
+   * @module model/InlineResponse20013
+   * @version 0.2.4
    */
 
   /**
-   * Constructs a new <code>InlineResponse2007Files</code>.
-   * @alias module:model/InlineResponse2007Files
+   * Constructs a new <code>InlineResponse20013</code>.
+   * @alias module:model/InlineResponse20013
    * @class
    */
   var exports = function() {
@@ -50,14 +50,15 @@
 
 
 
+
   };
 
   /**
-   * Constructs a <code>InlineResponse2007Files</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>InlineResponse20013</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/InlineResponse2007Files} obj Optional instance to populate.
-   * @return {module:model/InlineResponse2007Files} The populated <code>InlineResponse2007Files</code> instance.
+   * @param {module:model/InlineResponse20013} obj Optional instance to populate.
+   * @return {module:model/InlineResponse20013} The populated <code>InlineResponse20013</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
@@ -69,14 +70,17 @@
       if (data.hasOwnProperty('path')) {
         obj['path'] = ApiClient.convertToType(data['path'], 'String');
       }
+      if (data.hasOwnProperty('did')) {
+        obj['did'] = ApiClient.convertToType(data['did'], 'String');
+      }
+      if (data.hasOwnProperty('isDir')) {
+        obj['isDir'] = ApiClient.convertToType(data['isDir'], 'Boolean');
+      }
       if (data.hasOwnProperty('size')) {
         obj['size'] = ApiClient.convertToType(data['size'], 'Number');
       }
-      if (data.hasOwnProperty('time')) {
-        obj['time'] = ApiClient.convertToType(data['time'], 'Date');
-      }
-      if (data.hasOwnProperty('isdir')) {
-        obj['isdir'] = ApiClient.convertToType(data['isdir'], 'Boolean');
+      if (data.hasOwnProperty('timeCreated')) {
+        obj['timeCreated'] = ApiClient.convertToType(data['timeCreated'], 'Date');
       }
     }
     return obj;
@@ -91,17 +95,21 @@
    */
   exports.prototype['path'] = undefined;
   /**
+   * @member {String} did
+   */
+  exports.prototype['did'] = undefined;
+  /**
+   * @member {Boolean} isDir
+   */
+  exports.prototype['isDir'] = undefined;
+  /**
    * @member {Number} size
    */
   exports.prototype['size'] = undefined;
   /**
-   * @member {Date} time
+   * @member {Date} timeCreated
    */
-  exports.prototype['time'] = undefined;
-  /**
-   * @member {Boolean} isdir
-   */
-  exports.prototype['isdir'] = undefined;
+  exports.prototype['timeCreated'] = undefined;
 
 
 

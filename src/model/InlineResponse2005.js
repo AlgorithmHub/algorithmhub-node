@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2005 model module.
    * @module model/InlineResponse2005
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -44,8 +44,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
 
 
 
@@ -64,52 +62,38 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty('wmid')) {
+        obj['wmid'] = ApiClient.convertToType(data['wmid'], 'String');
       }
-      if (data.hasOwnProperty('path')) {
-        obj['path'] = ApiClient.convertToType(data['path'], 'String');
+      if (data.hasOwnProperty('mid')) {
+        obj['mid'] = ApiClient.convertToType(data['mid'], 'String');
       }
-      if (data.hasOwnProperty('did')) {
-        obj['did'] = ApiClient.convertToType(data['did'], 'String');
+      if (data.hasOwnProperty('rid')) {
+        obj['rid'] = ApiClient.convertToType(data['rid'], 'String');
       }
-      if (data.hasOwnProperty('isDir')) {
-        obj['isDir'] = ApiClient.convertToType(data['isDir'], 'Boolean');
-      }
-      if (data.hasOwnProperty('size')) {
-        obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-      }
-      if (data.hasOwnProperty('timeCreated')) {
-        obj['timeCreated'] = ApiClient.convertToType(data['timeCreated'], 'Date');
+      if (data.hasOwnProperty('isDone')) {
+        obj['isDone'] = ApiClient.convertToType(data['isDone'], 'Boolean');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} name
+   * @member {String} wmid
    */
-  exports.prototype['name'] = undefined;
+  exports.prototype['wmid'] = undefined;
   /**
-   * @member {String} path
+   * @member {String} mid
    */
-  exports.prototype['path'] = undefined;
+  exports.prototype['mid'] = undefined;
   /**
-   * @member {String} did
+   * @member {String} rid
    */
-  exports.prototype['did'] = undefined;
+  exports.prototype['rid'] = undefined;
   /**
-   * @member {Boolean} isDir
+   * @member {Boolean} isDone
    */
-  exports.prototype['isDir'] = undefined;
-  /**
-   * @member {Number} size
-   */
-  exports.prototype['size'] = undefined;
-  /**
-   * @member {Date} timeCreated
-   */
-  exports.prototype['timeCreated'] = undefined;
+  exports.prototype['isDone'] = undefined;
 
 
 

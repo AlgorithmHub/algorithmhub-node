@@ -14,24 +14,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2007', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponseDefault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse20017'), require('../model/InlineResponse20018'), require('../model/InlineResponseDefault'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.BenchmarkTestsApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse2007, root.algorithmhub.InlineResponseDefault);
+    root.algorithmhub.BenchmarkTestsApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse20017, root.algorithmhub.InlineResponse20018, root.algorithmhub.InlineResponseDefault);
   }
-}(this, function(ApiClient, InlineResponse2007, InlineResponseDefault) {
+}(this, function(ApiClient, InlineResponse20017, InlineResponse20018, InlineResponseDefault) {
   'use strict';
 
   /**
    * BenchmarkTests service.
    * @module api/BenchmarkTestsApi
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -47,10 +47,289 @@
 
 
     /**
+     * Create new benchmark
+     * Create a new benchmark
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.createBenchmarkWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling createBenchmark");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/benchmark', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Create new benchmark
+     * Create a new benchmark
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.createBenchmark = function(mid) {
+      return this.createBenchmarkWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a benchmark
+     * Delete a benchmark
+     * @param {String} mid The model id
+     * @param {String} bid The benchmark id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.deleteBenchmarkWithHttpInfo = function(mid, bid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling deleteBenchmark");
+      }
+
+      // verify the required parameter 'bid' is set
+      if (bid === undefined || bid === null) {
+        throw new Error("Missing the required parameter 'bid' when calling deleteBenchmark");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'bid': bid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/benchmark/{bid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete a benchmark
+     * Delete a benchmark
+     * @param {String} mid The model id
+     * @param {String} bid The benchmark id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.deleteBenchmark = function(mid, bid) {
+      return this.deleteBenchmarkWithHttpInfo(mid, bid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List benchmark tests
+     * List benchmark tests associated with this model
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20017} and HTTP response
+     */
+    this.listBenchmarkWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling listBenchmark");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20017;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/benchmark', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List benchmark tests
+     * List benchmark tests associated with this model
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20017}
+     */
+    this.listBenchmark = function(mid) {
+      return this.listBenchmarkWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Run benchmark
+     * Run benchmark
+     * @param {String} mid The model id
+     * @param {String} bid The benchmark id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20018} and HTTP response
+     */
+    this.runBenchmarkWithHttpInfo = function(mid, bid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling runBenchmark");
+      }
+
+      // verify the required parameter 'bid' is set
+      if (bid === undefined || bid === null) {
+        throw new Error("Missing the required parameter 'bid' when calling runBenchmark");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'bid': bid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20018;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/benchmark/{bid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Run benchmark
+     * Run benchmark
+     * @param {String} mid The model id
+     * @param {String} bid The benchmark id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20018}
+     */
+    this.runBenchmark = function(mid, bid) {
+      return this.runBenchmarkWithHttpInfo(mid, bid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a benchmark
+     * Update a benchmark
+     * @param {String} mid The model id
+     * @param {String} bid The benchmark id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    this.updateBenchmarkWithHttpInfo = function(mid, bid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling updateBenchmark");
+      }
+
+      // verify the required parameter 'bid' is set
+      if (bid === undefined || bid === null) {
+        throw new Error("Missing the required parameter 'bid' when calling updateBenchmark");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'bid': bid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = null;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/benchmark/{bid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update a benchmark
+     * Update a benchmark
+     * @param {String} mid The model id
+     * @param {String} bid The benchmark id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    this.updateBenchmark = function(mid, bid) {
+      return this.updateBenchmarkWithHttpInfo(mid, bid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Validation using default parameters
      * Does the validation part of the model and it uses the default parameters
      * @param {String} mid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     this.validateBenchmarkWithHttpInfo = function(mid) {
       var postBody = null;
@@ -74,7 +353,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2007;
+      var returnType = Object;
 
       return this.apiClient.callApi(
         '/run/{mid}/benchmark/results', 'GET',
@@ -87,7 +366,7 @@
      * Validation using default parameters
      * Does the validation part of the model and it uses the default parameters
      * @param {String} mid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     this.validateBenchmark = function(mid) {
       return this.validateBenchmarkWithHttpInfo(mid)

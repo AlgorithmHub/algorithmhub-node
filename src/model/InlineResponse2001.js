@@ -34,7 +34,7 @@
   /**
    * The InlineResponse2001 model module.
    * @module model/InlineResponse2001
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -44,9 +44,6 @@
    */
   var exports = function() {
     var _this = this;
-
-
-
 
 
   };
@@ -62,38 +59,17 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('name')) {
-        obj['name'] = ApiClient.convertToType(data['name'], 'String');
-      }
-      if (data.hasOwnProperty('sid')) {
-        obj['sid'] = ApiClient.convertToType(data['sid'], 'String');
-      }
-      if (data.hasOwnProperty('type')) {
-        obj['type'] = ApiClient.convertToType(data['type'], 'String');
-      }
-      if (data.hasOwnProperty('timeCreated')) {
-        obj['timeCreated'] = ApiClient.convertToType(data['timeCreated'], 'Date');
+      if (data.hasOwnProperty('rid')) {
+        obj['rid'] = ApiClient.convertToType(data['rid'], 'String');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} name
+   * @member {String} rid
    */
-  exports.prototype['name'] = undefined;
-  /**
-   * @member {String} sid
-   */
-  exports.prototype['sid'] = undefined;
-  /**
-   * @member {String} type
-   */
-  exports.prototype['type'] = undefined;
-  /**
-   * @member {Date} timeCreated
-   */
-  exports.prototype['timeCreated'] = undefined;
+  exports.prototype['rid'] = undefined;
 
 
 

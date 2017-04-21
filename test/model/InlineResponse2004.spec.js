@@ -54,32 +54,20 @@
       //expect(instance).to.be.a(algorithmhub.InlineResponse2004);
     });
 
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
+    it('should have the property mid (base name: "mid")', function() {
+      // uncomment below and update the code to test the property mid
       //var instane = new algorithmhub.InlineResponse2004();
       //expect(instance).to.be();
     });
 
-    it('should have the property sid (base name: "sid")', function() {
-      // uncomment below and update the code to test the property sid
+    it('should have the property rid (base name: "rid")', function() {
+      // uncomment below and update the code to test the property rid
       //var instane = new algorithmhub.InlineResponse2004();
       //expect(instance).to.be();
     });
 
-    it('should have the property tags (base name: "tags")', function() {
-      // uncomment below and update the code to test the property tags
-      //var instane = new algorithmhub.InlineResponse2004();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property runCount (base name: "runCount")', function() {
-      // uncomment below and update the code to test the property runCount
-      //var instane = new algorithmhub.InlineResponse2004();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isPublic (base name: "isPublic")', function() {
-      // uncomment below and update the code to test the property isPublic
+    it('should have the property owner (base name: "owner")', function() {
+      // uncomment below and update the code to test the property owner
       //var instane = new algorithmhub.InlineResponse2004();
       //expect(instance).to.be();
     });

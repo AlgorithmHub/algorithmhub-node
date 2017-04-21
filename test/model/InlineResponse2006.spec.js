@@ -54,8 +54,14 @@
       //expect(instance).to.be.a(algorithmhub.InlineResponse2006);
     });
 
-    it('should have the property id (base name: "id")', function() {
-      // uncomment below and update the code to test the property id
+    it('should have the property f (base name: "f")', function() {
+      // uncomment below and update the code to test the property f
+      //var instane = new algorithmhub.InlineResponse2006();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property outputs (base name: "outputs")', function() {
+      // uncomment below and update the code to test the property outputs
       //var instane = new algorithmhub.InlineResponse2006();
       //expect(instance).to.be();
     });

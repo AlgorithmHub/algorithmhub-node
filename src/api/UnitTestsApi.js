@@ -14,24 +14,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/InlineResponse2007', 'model/InlineResponseDefault'], factory);
+    define(['ApiClient', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponseDefault'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse2007'), require('../model/InlineResponseDefault'));
+    module.exports = factory(require('../ApiClient'), require('../model/InlineResponse20015'), require('../model/InlineResponse20016'), require('../model/InlineResponseDefault'));
   } else {
     // Browser globals (root is window)
     if (!root.algorithmhub) {
       root.algorithmhub = {};
     }
-    root.algorithmhub.UnitTestsApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse2007, root.algorithmhub.InlineResponseDefault);
+    root.algorithmhub.UnitTestsApi = factory(root.algorithmhub.ApiClient, root.algorithmhub.InlineResponse20015, root.algorithmhub.InlineResponse20016, root.algorithmhub.InlineResponseDefault);
   }
-}(this, function(ApiClient, InlineResponse2007, InlineResponseDefault) {
+}(this, function(ApiClient, InlineResponse20015, InlineResponse20016, InlineResponseDefault) {
   'use strict';
 
   /**
    * UnitTests service.
    * @module api/UnitTestsApi
-   * @version 0.2.3
+   * @version 0.2.4
    */
 
   /**
@@ -47,10 +47,171 @@
 
 
     /**
+     * Create new spec test
+     * Create new spec test
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
+     */
+    this.createTestWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling createTest");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20016;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/test', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Create new spec test
+     * Create new spec test
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
+     */
+    this.createTest = function(mid) {
+      return this.createTestWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Delete a spec test
+     * Delete a spec test
+     * @param {String} mid The model id
+     * @param {String} tid The test id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
+     */
+    this.deleteTestWithHttpInfo = function(mid, tid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling deleteTest");
+      }
+
+      // verify the required parameter 'tid' is set
+      if (tid === undefined || tid === null) {
+        throw new Error("Missing the required parameter 'tid' when calling deleteTest");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'tid': tid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20016;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/test/{tid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Delete a spec test
+     * Delete a spec test
+     * @param {String} mid The model id
+     * @param {String} tid The test id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
+     */
+    this.deleteTest = function(mid, tid) {
+      return this.deleteTestWithHttpInfo(mid, tid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * List spec tests
+     * List spec tests
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
+     */
+    this.listTestWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling listTest");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20016;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/test', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * List spec tests
+     * List spec tests
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
+     */
+    this.listTest = function(mid) {
+      return this.listTestWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Check for keyboard interrupt
      * Check for keyboard interrupt during run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     this.runKeyboardInterruptWithHttpInfo = function(rid) {
       var postBody = null;
@@ -74,7 +235,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse20016;
 
       return this.apiClient.callApi(
         '/run/{rid}/test/keyboardInterrupt', 'GET',
@@ -87,7 +248,7 @@
      * Check for keyboard interrupt
      * Check for keyboard interrupt during run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     this.runKeyboardInterrupt = function(rid) {
       return this.runKeyboardInterruptWithHttpInfo(rid)
@@ -98,10 +259,10 @@
 
 
     /**
-     * Check for keyboard interrupt
-     * Check for keyboard interrupt during run
+     * Check for runtime error
+     * Check for any error that occurs during run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     this.runRuntimeErrorWithHttpInfo = function(rid) {
       var postBody = null;
@@ -125,7 +286,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse20016;
 
       return this.apiClient.callApi(
         '/run/{rid}/test/runtimeError', 'GET',
@@ -135,10 +296,10 @@
     }
 
     /**
-     * Check for keyboard interrupt
-     * Check for keyboard interrupt during run
+     * Check for runtime error
+     * Check for any error that occurs during run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     this.runRuntimeError = function(rid) {
       return this.runRuntimeErrorWithHttpInfo(rid)
@@ -149,22 +310,29 @@
 
 
     /**
-     * Runs the unit test cases
-     * Runs the unit test cases specified for Model
+     * Run the tests
+     * Run the tests
      * @param {String} mid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @param {String} tid The test id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
-    this.validatModelWithHttpInfo = function(mid) {
+    this.runTestWithHttpInfo = function(mid, tid) {
       var postBody = null;
 
       // verify the required parameter 'mid' is set
       if (mid === undefined || mid === null) {
-        throw new Error("Missing the required parameter 'mid' when calling validatModel");
+        throw new Error("Missing the required parameter 'mid' when calling runTest");
+      }
+
+      // verify the required parameter 'tid' is set
+      if (tid === undefined || tid === null) {
+        throw new Error("Missing the required parameter 'tid' when calling runTest");
       }
 
 
       var pathParams = {
-        'mid': mid
+        'mid': mid,
+        'tid': tid
       };
       var queryParams = {
       };
@@ -176,23 +344,83 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse20016;
 
       return this.apiClient.callApi(
-        '/model/{mid}/test/validate', 'GET',
+        '/model/{mid}/test/{tid}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType
       );
     }
 
     /**
-     * Runs the unit test cases
-     * Runs the unit test cases specified for Model
+     * Run the tests
+     * Run the tests
      * @param {String} mid The model id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @param {String} tid The test id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
-    this.validatModel = function(mid) {
-      return this.validatModelWithHttpInfo(mid)
+    this.runTest = function(mid, tid) {
+      return this.runTestWithHttpInfo(mid, tid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Update a spec test
+     * Update a spec test
+     * @param {String} mid The model id
+     * @param {String} tid The test id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
+     */
+    this.updateTestWithHttpInfo = function(mid, tid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling updateTest");
+      }
+
+      // verify the required parameter 'tid' is set
+      if (tid === undefined || tid === null) {
+        throw new Error("Missing the required parameter 'tid' when calling updateTest");
+      }
+
+
+      var pathParams = {
+        'mid': mid,
+        'tid': tid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20016;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/test/{tid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Update a spec test
+     * Update a spec test
+     * @param {String} mid The model id
+     * @param {String} tid The test id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
+     */
+    this.updateTest = function(mid, tid) {
+      return this.updateTestWithHttpInfo(mid, tid)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -203,7 +431,7 @@
      * Checks valid data set
      * Checking for valid data set
      * @param {String} did The dataset id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20015} and HTTP response
      */
     this.validateDataWithHttpInfo = function(did) {
       var postBody = null;
@@ -227,7 +455,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse20015;
 
       return this.apiClient.callApi(
         '/data/{did}/test/validate', 'GET',
@@ -240,7 +468,7 @@
      * Checks valid data set
      * Checking for valid data set
      * @param {String} did The dataset id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20015}
      */
     this.validateData = function(did) {
       return this.validateDataWithHttpInfo(did)
@@ -252,9 +480,60 @@
 
     /**
      * Runs the unit test cases
+     * Runs the unit test cases specified for model
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
+     */
+    this.validateModelWithHttpInfo = function(mid) {
+      var postBody = null;
+
+      // verify the required parameter 'mid' is set
+      if (mid === undefined || mid === null) {
+        throw new Error("Missing the required parameter 'mid' when calling validateModel");
+      }
+
+
+      var pathParams = {
+        'mid': mid
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = [];
+      var returnType = InlineResponse20016;
+
+      return this.apiClient.callApi(
+        '/model/{mid}/test/validate', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType
+      );
+    }
+
+    /**
+     * Runs the unit test cases
+     * Runs the unit test cases specified for model
+     * @param {String} mid The model id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
+     */
+    this.validateModel = function(mid) {
+      return this.validateModelWithHttpInfo(mid)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Runs the unit test cases
      * Runs the unit test cases specified for Run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse20016} and HTTP response
      */
     this.validateRunWithHttpInfo = function(rid) {
       var postBody = null;
@@ -278,7 +557,7 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = [];
-      var returnType = InlineResponse2007;
+      var returnType = InlineResponse20016;
 
       return this.apiClient.callApi(
         '/run/{rid}/test/validate', 'GET',
@@ -291,7 +570,7 @@
      * Runs the unit test cases
      * Runs the unit test cases specified for Run
      * @param {String} rid The run id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse20016}
      */
     this.validateRun = function(rid) {
       return this.validateRunWithHttpInfo(rid)

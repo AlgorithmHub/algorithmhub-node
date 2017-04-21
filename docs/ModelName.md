@@ -1,4 +1,4 @@
-# algorithmhub.Body3
+# algorithmhub.ModelName
 
 ## Properties
 Name | Type | Description | Notes

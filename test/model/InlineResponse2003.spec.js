@@ -60,8 +60,8 @@
       //expect(instance).to.be();
     });
 
-    it('should have the property wsid (base name: "wsid")', function() {
-      // uncomment below and update the code to test the property wsid
+    it('should have the property mid (base name: "mid")', function() {
+      // uncomment below and update the code to test the property mid
       //var instane = new algorithmhub.InlineResponse2003();
       //expect(instance).to.be();
     });

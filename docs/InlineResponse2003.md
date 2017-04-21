@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**wsid** | **String** |  | [optional] 
+**mid** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **timeCreated** | **Date** |  | [optional] 
 

@@ -54,32 +54,8 @@
       //expect(instance).to.be.a(algorithmhub.Body2);
     });
 
-    it('should have the property wsid (base name: "wsid")', function() {
-      // uncomment below and update the code to test the property wsid
-      //var instane = new algorithmhub.Body2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property inputs (base name: "inputs")', function() {
-      // uncomment below and update the code to test the property inputs
-      //var instane = new algorithmhub.Body2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property f (base name: "f")', function() {
-      // uncomment below and update the code to test the property f
-      //var instane = new algorithmhub.Body2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property outputs (base name: "outputs")', function() {
-      // uncomment below and update the code to test the property outputs
-      //var instane = new algorithmhub.Body2();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property isPublic (base name: "isPublic")', function() {
-      // uncomment below and update the code to test the property isPublic
+    it('should have the property wstype (base name: "wstype")', function() {
+      // uncomment below and update the code to test the property wstype
       //var instane = new algorithmhub.Body2();
       //expect(instance).to.be();
     });

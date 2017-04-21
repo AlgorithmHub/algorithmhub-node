@@ -14,12 +14,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Body', 'model/Body1', 'model/Body2', 'model/Body3', 'model/Body4', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2007Files', 'model/InlineResponseDefault', 'api/BenchmarkTestsApi', 'api/DataApi', 'api/ModelApi', 'api/RunApi', 'api/UnitTestsApi', 'api/WorkspaceApi'], factory);
+    define(['ApiClient', 'model/Body', 'model/Body1', 'model/Body2', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse20010', 'model/InlineResponse20011', 'model/InlineResponse20012', 'model/InlineResponse20013', 'model/InlineResponse20014', 'model/InlineResponse20015', 'model/InlineResponse20016', 'model/InlineResponse20016Files', 'model/InlineResponse20017', 'model/InlineResponse20018', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/InlineResponse2008', 'model/InlineResponse2009', 'model/InlineResponseDefault', 'model/ModelName', 'model/ModelName1', 'api/BenchmarkTestsApi', 'api/DataApi', 'api/ModelApi', 'api/RunApi', 'api/UnitTestsApi', 'api/WorkspaceApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Body'), require('./model/Body1'), require('./model/Body2'), require('./model/Body3'), require('./model/Body4'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse2002'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/InlineResponse2007Files'), require('./model/InlineResponseDefault'), require('./api/BenchmarkTestsApi'), require('./api/DataApi'), require('./api/ModelApi'), require('./api/RunApi'), require('./api/UnitTestsApi'), require('./api/WorkspaceApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Body'), require('./model/Body1'), require('./model/Body2'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse20010'), require('./model/InlineResponse20011'), require('./model/InlineResponse20012'), require('./model/InlineResponse20013'), require('./model/InlineResponse20014'), require('./model/InlineResponse20015'), require('./model/InlineResponse20016'), require('./model/InlineResponse20016Files'), require('./model/InlineResponse20017'), require('./model/InlineResponse20018'), require('./model/InlineResponse2002'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/InlineResponse2008'), require('./model/InlineResponse2009'), require('./model/InlineResponseDefault'), require('./model/ModelName'), require('./model/ModelName1'), require('./api/BenchmarkTestsApi'), require('./api/DataApi'), require('./api/ModelApi'), require('./api/RunApi'), require('./api/UnitTestsApi'), require('./api/WorkspaceApi'));
   }
-}(function(ApiClient, Body, Body1, Body2, Body3, Body4, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2007Files, InlineResponseDefault, BenchmarkTestsApi, DataApi, ModelApi, RunApi, UnitTestsApi, WorkspaceApi) {
+}(function(ApiClient, Body, Body1, Body2, InlineResponse200, InlineResponse2001, InlineResponse20010, InlineResponse20011, InlineResponse20012, InlineResponse20013, InlineResponse20014, InlineResponse20015, InlineResponse20016, InlineResponse20016Files, InlineResponse20017, InlineResponse20018, InlineResponse2002, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, InlineResponse2008, InlineResponse2009, InlineResponseDefault, ModelName, ModelName1, BenchmarkTestsApi, DataApi, ModelApi, RunApi, UnitTestsApi, WorkspaceApi) {
   'use strict';
 
   /**
@@ -51,7 +51,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 0.2.3
+   * @version 0.2.4
    */
   var exports = {
     /**
@@ -75,16 +75,6 @@
      */
     Body2: Body2,
     /**
-     * The Body3 model constructor.
-     * @property {module:model/Body3}
-     */
-    Body3: Body3,
-    /**
-     * The Body4 model constructor.
-     * @property {module:model/Body4}
-     */
-    Body4: Body4,
-    /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
      */
@@ -94,6 +84,56 @@
      * @property {module:model/InlineResponse2001}
      */
     InlineResponse2001: InlineResponse2001,
+    /**
+     * The InlineResponse20010 model constructor.
+     * @property {module:model/InlineResponse20010}
+     */
+    InlineResponse20010: InlineResponse20010,
+    /**
+     * The InlineResponse20011 model constructor.
+     * @property {module:model/InlineResponse20011}
+     */
+    InlineResponse20011: InlineResponse20011,
+    /**
+     * The InlineResponse20012 model constructor.
+     * @property {module:model/InlineResponse20012}
+     */
+    InlineResponse20012: InlineResponse20012,
+    /**
+     * The InlineResponse20013 model constructor.
+     * @property {module:model/InlineResponse20013}
+     */
+    InlineResponse20013: InlineResponse20013,
+    /**
+     * The InlineResponse20014 model constructor.
+     * @property {module:model/InlineResponse20014}
+     */
+    InlineResponse20014: InlineResponse20014,
+    /**
+     * The InlineResponse20015 model constructor.
+     * @property {module:model/InlineResponse20015}
+     */
+    InlineResponse20015: InlineResponse20015,
+    /**
+     * The InlineResponse20016 model constructor.
+     * @property {module:model/InlineResponse20016}
+     */
+    InlineResponse20016: InlineResponse20016,
+    /**
+     * The InlineResponse20016Files model constructor.
+     * @property {module:model/InlineResponse20016Files}
+     */
+    InlineResponse20016Files: InlineResponse20016Files,
+    /**
+     * The InlineResponse20017 model constructor.
+     * @property {module:model/InlineResponse20017}
+     */
+    InlineResponse20017: InlineResponse20017,
+    /**
+     * The InlineResponse20018 model constructor.
+     * @property {module:model/InlineResponse20018}
+     */
+    InlineResponse20018: InlineResponse20018,
     /**
      * The InlineResponse2002 model constructor.
      * @property {module:model/InlineResponse2002}
@@ -125,15 +165,30 @@
      */
     InlineResponse2007: InlineResponse2007,
     /**
-     * The InlineResponse2007Files model constructor.
-     * @property {module:model/InlineResponse2007Files}
+     * The InlineResponse2008 model constructor.
+     * @property {module:model/InlineResponse2008}
      */
-    InlineResponse2007Files: InlineResponse2007Files,
+    InlineResponse2008: InlineResponse2008,
+    /**
+     * The InlineResponse2009 model constructor.
+     * @property {module:model/InlineResponse2009}
+     */
+    InlineResponse2009: InlineResponse2009,
     /**
      * The InlineResponseDefault model constructor.
      * @property {module:model/InlineResponseDefault}
      */
     InlineResponseDefault: InlineResponseDefault,
+    /**
+     * The ModelName model constructor.
+     * @property {module:model/ModelName}
+     */
+    ModelName: ModelName,
+    /**
+     * The ModelName1 model constructor.
+     * @property {module:model/ModelName1}
+     */
+    ModelName1: ModelName1,
     /**
      * The BenchmarkTestsApi service constructor.
      * @property {module:api/BenchmarkTestsApi}
