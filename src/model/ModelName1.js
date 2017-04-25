@@ -34,7 +34,7 @@
   /**
    * The ModelName1 model module.
    * @module model/ModelName1
-   * @version 0.2.4
+   * @version 0.2.5
    */
 
   /**

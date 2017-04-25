@@ -627,7 +627,7 @@ No authorization required
 
 <a name="runModel"></a>
 # **runModel**
-> Object runModel(mid)
+> Object runModel(mid, input)
 
 Run a model
 
@@ -641,7 +641,9 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var mid = "mid_example"; // String | The model id to run
 
-apiInstance.runModel(mid).then(function(data) {
+var input = null; // Object | Input into the model
+
+apiInstance.runModel(mid, input).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -654,6 +656,7 @@ apiInstance.runModel(mid).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mid** | **String**| The model id to run | 
+ **input** | **Object**| Input into the model | 
 
 ### Return type
 
@@ -716,7 +719,7 @@ No authorization required
 
 <a name="runModel_0"></a>
 # **runModel_0**
-> Object runModel_0(mid)
+> Object runModel_0(mid, input)
 
 Run a model
 
@@ -730,7 +733,9 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var mid = "mid_example"; // String | The model id to run
 
-apiInstance.runModel_0(mid).then(function(data) {
+var input = null; // Object | Input into the model
+
+apiInstance.runModel_0(mid, input).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -743,6 +748,7 @@ apiInstance.runModel_0(mid).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mid** | **String**| The model id to run | 
+ **input** | **Object**| Input into the model | 
 
 ### Return type
 

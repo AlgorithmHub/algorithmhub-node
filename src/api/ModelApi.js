@@ -31,7 +31,7 @@
   /**
    * Model service.
    * @module api/ModelApi
-   * @version 0.2.4
+   * @version 0.2.5
    */
 
   /**
@@ -776,14 +776,20 @@
      * Run a model
      * Run an existing model
      * @param {String} mid The model id to run
+     * @param {Object} input Input into the model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.runModelWithHttpInfo = function(mid) {
-      var postBody = null;
+    this.runModelWithHttpInfo = function(mid, input) {
+      var postBody = input;
 
       // verify the required parameter 'mid' is set
       if (mid === undefined || mid === null) {
         throw new Error("Missing the required parameter 'mid' when calling runModel");
+      }
+
+      // verify the required parameter 'input' is set
+      if (input === undefined || input === null) {
+        throw new Error("Missing the required parameter 'input' when calling runModel");
       }
 
 
@@ -813,10 +819,11 @@
      * Run a model
      * Run an existing model
      * @param {String} mid The model id to run
+     * @param {Object} input Input into the model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.runModel = function(mid) {
-      return this.runModelWithHttpInfo(mid)
+    this.runModel = function(mid, input) {
+      return this.runModelWithHttpInfo(mid, input)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -886,14 +893,20 @@
      * Run a model
      * Run an existing model
      * @param {String} mid The model id to run
+     * @param {Object} input Input into the model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    this.runModel_0WithHttpInfo = function(mid) {
-      var postBody = null;
+    this.runModel_0WithHttpInfo = function(mid, input) {
+      var postBody = input;
 
       // verify the required parameter 'mid' is set
       if (mid === undefined || mid === null) {
         throw new Error("Missing the required parameter 'mid' when calling runModel_0");
+      }
+
+      // verify the required parameter 'input' is set
+      if (input === undefined || input === null) {
+        throw new Error("Missing the required parameter 'input' when calling runModel_0");
       }
 
 
@@ -923,10 +936,11 @@
      * Run a model
      * Run an existing model
      * @param {String} mid The model id to run
+     * @param {Object} input Input into the model
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    this.runModel_0 = function(mid) {
-      return this.runModel_0WithHttpInfo(mid)
+    this.runModel_0 = function(mid, input) {
+      return this.runModel_0WithHttpInfo(mid, input)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

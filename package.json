@@ -1,6 +1,6 @@
 {
   "name": "algorithmhub",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "JavaScript client library for AlgorithmHub.",
   "license": "Unlicense",
   "main": "src/index.js",

@@ -31,7 +31,7 @@
   /**
    * Workspace service.
    * @module api/WorkspaceApi
-   * @version 0.2.4
+   * @version 0.2.5
    */
 
   /**
