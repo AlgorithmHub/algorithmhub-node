@@ -36,7 +36,7 @@
   /**
    * The InlineResponseDefault model module.
    * @module model/InlineResponseDefault
-   * @version 0.3.0
+   * @version 0.3.1
    */
 
   /**

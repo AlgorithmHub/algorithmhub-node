@@ -56,14 +56,14 @@
       //expect(instance).to.be.a(algorithmhub.Body4);
     });
 
-    it('should have the property cid (base name: "cid")', function() {
-      // uncomment below and update the code to test the property cid
+    it('should have the property type (base name: "type")', function() {
+      // uncomment below and update the code to test the property type
       //var instane = new algorithmhub.Body4();
       //expect(instance).to.be();
     });
 
-    it('should have the property type (base name: "type")', function() {
-      // uncomment below and update the code to test the property type
+    it('should have the property capacity (base name: "capacity")', function() {
+      // uncomment below and update the code to test the property capacity
       //var instane = new algorithmhub.Body4();
       //expect(instance).to.be();
     });

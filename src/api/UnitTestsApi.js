@@ -33,7 +33,7 @@
   /**
    * UnitTests service.
    * @module api/UnitTestsApi
-   * @version 0.3.0
+   * @version 0.3.1
    */
 
   /**

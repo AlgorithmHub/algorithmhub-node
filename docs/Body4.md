@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**cid** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
+**capacity** | **Number** |  | [optional] 
 
 

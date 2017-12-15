@@ -36,7 +36,7 @@
   /**
    * The Body4 model module.
    * @module model/Body4
-   * @version 0.3.0
+   * @version 0.3.1
    */
 
   /**
@@ -62,24 +62,24 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('cid')) {
-        obj['cid'] = ApiClient.convertToType(data['cid'], 'String');
-      }
       if (data.hasOwnProperty('type')) {
         obj['type'] = ApiClient.convertToType(data['type'], 'String');
+      }
+      if (data.hasOwnProperty('capacity')) {
+        obj['capacity'] = ApiClient.convertToType(data['capacity'], 'Number');
       }
     }
     return obj;
   }
 
   /**
-   * @member {String} cid
-   */
-  exports.prototype['cid'] = undefined;
-  /**
    * @member {String} type
    */
   exports.prototype['type'] = undefined;
+  /**
+   * @member {Number} capacity
+   */
+  exports.prototype['capacity'] = undefined;
 
 
 

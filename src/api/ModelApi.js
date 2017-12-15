@@ -33,7 +33,7 @@
   /**
    * Model service.
    * @module api/ModelApi
-   * @version 0.3.0
+   * @version 0.3.1
    */
 
   /**
