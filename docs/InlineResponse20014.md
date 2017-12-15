@@ -3,6 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**cnid** | **String** |  | [optional] 
+**cid** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+**role** | **String** |  | [optional] 
+**cpus** | **Number** |  | [optional] 
+**mem** | **Number** |  | [optional] 
+**status** | **String** |  | [optional] 
+**timeCreated** | **Date** |  | [optional] 
 
 

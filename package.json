@@ -1,11 +1,14 @@
 {
   "name": "algorithmhub",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "JavaScript client library for AlgorithmHub.",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"
+  },
+  "browser": {
+    "fs": false
   },
   "dependencies": {
     "superagent": "3.5.2"

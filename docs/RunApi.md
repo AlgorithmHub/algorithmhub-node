@@ -151,7 +151,7 @@ No authorization required
 
 <a name="getOutput"></a>
 # **getOutput**
-> InlineResponse2007 getOutput(rid)
+> Object getOutput(rid)
 
 Get the output
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+**Object**
 
 ### Authorization
 
@@ -240,7 +240,7 @@ No authorization required
 
 <a name="getOutputFile"></a>
 # **getOutputFile**
-> InlineResponse2009 getOutputFile(rid, filename)
+> InlineResponse2008 getOutputFile(rid, filename)
 
 Get a file
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2009**](InlineResponse2009.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -329,7 +329,7 @@ No authorization required
 
 <a name="listOutputFigures"></a>
 # **listOutputFigures**
-> InlineResponse20010 listOutputFigures(rid)
+> InlineResponse2009 listOutputFigures(rid)
 
 Get list of figures
 
@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20010**](InlineResponse20010.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ No authorization required
 
 <a name="listOutputFiles"></a>
 # **listOutputFiles**
-> InlineResponse2008 listOutputFiles(rid)
+> InlineResponse2007 listOutputFiles(rid)
 
 Get list of output files
 
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 

@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**files** | **Object** |  | [optional] 
-**mimes** | **Object** |  | [optional] 
+**lastModified** | **Date** |  | [optional] 
+**contentType** | **String** |  | [optional] 
+**cacheControl** | **String** |  | [optional] 
 
 

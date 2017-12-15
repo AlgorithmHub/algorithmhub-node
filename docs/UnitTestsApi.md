@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="createTest"></a>
 # **createTest**
-> InlineResponse20016 createTest(mid)
+> InlineResponse20017 createTest(mid)
 
 Create new spec test
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -61,7 +61,7 @@ No authorization required
 
 <a name="deleteTest"></a>
 # **deleteTest**
-> InlineResponse20016 deleteTest(mid, tid)
+> InlineResponse20017 deleteTest(mid, tid)
 
 Delete a spec test
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -107,7 +107,7 @@ No authorization required
 
 <a name="listTest"></a>
 # **listTest**
-> InlineResponse20016 listTest(mid)
+> InlineResponse20017 listTest(mid)
 
 List spec tests
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -150,7 +150,7 @@ No authorization required
 
 <a name="runKeyboardInterrupt"></a>
 # **runKeyboardInterrupt**
-> InlineResponse20016 runKeyboardInterrupt(rid)
+> InlineResponse20017 runKeyboardInterrupt(rid)
 
 Check for keyboard interrupt
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -193,7 +193,7 @@ No authorization required
 
 <a name="runRuntimeError"></a>
 # **runRuntimeError**
-> InlineResponse20016 runRuntimeError(rid)
+> InlineResponse20017 runRuntimeError(rid)
 
 Check for runtime error
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -236,7 +236,7 @@ No authorization required
 
 <a name="runTest"></a>
 # **runTest**
-> InlineResponse20016 runTest(mid, tid)
+> InlineResponse20017 runTest(mid, tid)
 
 Run the tests
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ No authorization required
 
 <a name="updateTest"></a>
 # **updateTest**
-> InlineResponse20016 updateTest(mid, tid)
+> InlineResponse20017 updateTest(mid, tid)
 
 Update a spec test
 
@@ -315,7 +315,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -328,7 +328,7 @@ No authorization required
 
 <a name="validateData"></a>
 # **validateData**
-> InlineResponse20015 validateData(did)
+> InlineResponse20016 validateData(did)
 
 Checks valid data set
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20015**](InlineResponse20015.md)
+[**InlineResponse20016**](InlineResponse20016.md)
 
 ### Authorization
 
@@ -371,7 +371,7 @@ No authorization required
 
 <a name="validateModel"></a>
 # **validateModel**
-> InlineResponse20016 validateModel(mid)
+> InlineResponse20017 validateModel(mid)
 
 Runs the unit test cases
 
@@ -401,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 
@@ -414,7 +414,7 @@ No authorization required
 
 <a name="validateRun"></a>
 # **validateRun**
-> InlineResponse20016 validateRun(rid)
+> InlineResponse20017 validateRun(rid)
 
 Runs the unit test cases
 
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20016**](InlineResponse20016.md)
+[**InlineResponse20017**](InlineResponse20017.md)
 
 ### Authorization
 

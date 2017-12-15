@@ -103,7 +103,7 @@ No authorization required
 
 <a name="listBenchmark"></a>
 # **listBenchmark**
-> InlineResponse20017 listBenchmark(mid)
+> InlineResponse20018 listBenchmark(mid)
 
 List benchmark tests
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20017**](InlineResponse20017.md)
+[**InlineResponse20018**](InlineResponse20018.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ No authorization required
 
 <a name="runBenchmark"></a>
 # **runBenchmark**
-> InlineResponse20018 runBenchmark(mid, bid)
+> InlineResponse20019 runBenchmark(mid, bid)
 
 Run benchmark
 
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20018**](InlineResponse20018.md)
+[**InlineResponse20019**](InlineResponse20019.md)
 
 ### Authorization
 

@@ -4,10 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**sid** | **String** |  | [optional] 
-**tags** | **[String]** |  | [optional] 
-**runCount** | **Number** |  | [optional] 
-**isPublic** | **Boolean** |  | [optional] 
+**path** | **String** |  | [optional] 
+**did** | **String** |  | [optional] 
+**isDir** | **Boolean** |  | [optional] 
+**size** | **Number** |  | [optional] 
 **timeCreated** | **Date** |  | [optional] 
 
 

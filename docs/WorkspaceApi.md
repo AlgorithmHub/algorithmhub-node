@@ -148,7 +148,7 @@ No authorization required
 
 <a name="detailWorkspace"></a>
 # **detailWorkspace**
-> InlineResponse20011 detailWorkspace(wmid)
+> InlineResponse20010 detailWorkspace(wmid)
 
 Gets workspace metadata
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20011**](InlineResponse20011.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ No authorization required
 
 <a name="listServices"></a>
 # **listServices**
-> [InlineResponse20012] listServices(wmid)
+> [InlineResponse20011] listServices(wmid)
 
 Get models associated
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse20012]**](InlineResponse20012.md)
+[**[InlineResponse20011]**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -234,7 +234,7 @@ No authorization required
 
 <a name="listServices_0"></a>
 # **listServices_0**
-> [InlineResponse20012] listServices_0(wmid)
+> [InlineResponse20011] listServices_0(wmid)
 
 Get models associated
 
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[InlineResponse20012]**](InlineResponse20012.md)
+[**[InlineResponse20011]**](InlineResponse20011.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ No authorization required
 
 <a name="listWorkspaces"></a>
 # **listWorkspaces**
-> [InlineResponse20011] listWorkspaces()
+> [InlineResponse20010] listWorkspaces()
 
 Returns list of workspaces
 
@@ -301,7 +301,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[InlineResponse20011]**](InlineResponse20011.md)
+[**[InlineResponse20010]**](InlineResponse20010.md)
 
 ### Authorization
 

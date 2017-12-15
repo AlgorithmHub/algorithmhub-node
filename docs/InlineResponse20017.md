@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
+**path** | **String** |  | [optional] 
+**files** | [**[InlineResponse20017Files]**](InlineResponse20017Files.md) |  | 
 
 

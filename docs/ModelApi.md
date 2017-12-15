@@ -641,7 +641,7 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var mid = "mid_example"; // String | The model id to run
 
-var input = null; // Object | Input into the model
+var input = [new algorithmhub.[ERRORUNKNOWN]()]; // [ERRORUNKNOWN] | Input into the model
 
 apiInstance.runModel(mid, input).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -656,7 +656,7 @@ apiInstance.runModel(mid, input).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mid** | **String**| The model id to run | 
- **input** | **Object**| Input into the model | 
+ **input** | [**[ERRORUNKNOWN]**](.md)| Input into the model | 
 
 ### Return type
 
@@ -733,7 +733,7 @@ var apiInstance = new algorithmhub.ModelApi();
 
 var mid = "mid_example"; // String | The model id to run
 
-var input = null; // Object | Input into the model
+var input = [new algorithmhub.[ERRORUNKNOWN]()]; // [ERRORUNKNOWN] | Input into the model
 
 apiInstance.runModel_0(mid, input).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
@@ -748,7 +748,7 @@ apiInstance.runModel_0(mid, input).then(function(data) {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mid** | **String**| The model id to run | 
- **input** | **Object**| Input into the model | 
+ **input** | [**[ERRORUNKNOWN]**](.md)| Input into the model | 
 
 ### Return type
 

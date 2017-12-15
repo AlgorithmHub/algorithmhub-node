@@ -3,7 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**path** | **String** |  | [optional] 
-**files** | [**[InlineResponse20016Files]**](InlineResponse20016Files.md) |  | 
+**name** | **String** |  | [optional] 
+**did** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+**timeCreated** | **Date** |  | [optional] 
 
 

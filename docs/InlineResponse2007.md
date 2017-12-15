@@ -3,8 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**fdrtab** | **Object** |  | [optional] 
-**optimalPlot** | **String** |  | [optional] 
-**rid** | **String** |  | [optional] 
+**files** | **Object** |  | [optional] 
+**mimes** | **Object** |  | [optional] 
 
 

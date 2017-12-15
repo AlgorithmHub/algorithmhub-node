@@ -99,7 +99,7 @@ No authorization required
 
 <a name="getData"></a>
 # **getData**
-> InlineResponse20013 getData(did)
+> InlineResponse20012 getData(did)
 
 Get information on the data
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20013**](InlineResponse20013.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ No authorization required
 
 <a name="listData"></a>
 # **listData**
-> [InlineResponse20013] listData()
+> [InlineResponse20012] listData()
 
 Return a list of data
 
@@ -166,7 +166,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[InlineResponse20013]**](InlineResponse20013.md)
+[**[InlineResponse20012]**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ No authorization required
 
 <a name="uploadData"></a>
 # **uploadData**
-> InlineResponse20014 uploadData(file)
+> InlineResponse20013 uploadData(file)
 
 Upload data
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

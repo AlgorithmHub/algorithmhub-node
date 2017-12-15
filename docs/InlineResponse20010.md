@@ -3,6 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**files** | **Object** |  | [optional] 
+**name** | **String** |  | [optional] 
+**wmid** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
+**timeCreated** | **Date** |  | [optional] 
 
 

@@ -4,8 +4,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**wmid** | **String** |  | [optional] 
-**type** | **String** |  | [optional] 
+**sid** | **String** |  | [optional] 
+**tags** | **[String]** |  | [optional] 
+**runCount** | **Number** |  | [optional] 
+**isPublic** | **Boolean** |  | [optional] 
 **timeCreated** | **Date** |  | [optional] 
 
 
